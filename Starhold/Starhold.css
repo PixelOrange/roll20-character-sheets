@@ -8,6 +8,7 @@ div.sheet-col1 {
 
 div.sheet-col2 {
     display: inline-block;
+    vertical-align: top;
 }
 
 select.sheet-archtype {
