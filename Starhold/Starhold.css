@@ -1,14 +1,18 @@
+/* Affects Entire Sheet */
+
+span.sheet-text {
+font-family: "Lucida Console"
+}
+
 div.sheet-row {
     min-width: 900px;
+    white-space: nowrap;
 }
+
+/* Affects Left Column */
 
 div.sheet-col1 {
     display: inline-block;
-}
-
-div.sheet-col2 {
-    display: inline-block;
-    vertical-align: top;
 }
 
 select.sheet-archtype {
@@ -21,18 +25,110 @@ div.sheet-name, div.sheet-attitude {
     vertical-align:top;
 }
 
-input.sheet-character-name, input.sheet-attitude {
+input.sheet-attr-character-name, input.sheet-attr-attitude {
     width: 190px;
     vertical-align: baseline;
 }
 
-textarea.sheet-appearance, textarea.sheet-notes {
+textarea.sheet-attr-appearance, textarea.sheet-attr-notes {
     width: 373px;
 }
 
-span.sheet-text {
-font-family: "Lucida Console"
+/* Affects Right Column */
+
+div.sheet-col2 {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
 }
+
+div.sheet-stats {
+    position: relative;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+input.sheet-head, .sheet-hand, .sheet-heart, .sheet-group, .sheet-tech {
+    position: absolute;
+    font-size: 20px;
+    text-align: center;
+}
+
+input.sheet-head, .sheet-heart, .sheet-tech {
+    top: 30px;
+}
+
+input.sheet-hand, .sheet-group {
+    top: 80px;
+}
+
+input.sheet-head {
+    left: 20px;
+}
+
+input.sheet-hand {
+    left: 105px;
+}
+
+input.sheet-heart {
+    left: 190px;
+}
+
+input.sheet-group {
+    left: 275px;
+}
+
+input.sheet-tech {
+    left: 360px;
+}
+
+span.sheet-head-text, .sheet-hand-text, .sheet-heart-text, .sheet-group-text, .sheet-tech-text {
+    position: absolute;
+    text-align: center;
+}
+
+span.sheet-head-text, .sheet-heart-text, .sheet-tech-text {
+    top: 105px;
+}
+
+span.sheet-hand-text, .sheet-group-text {
+    top: 5px;
+}
+
+span.sheet-head-text {
+    color: blue;
+    left: 25px;
+}
+
+span.sheet-hand-text {
+    color: green;
+    left: 115px;
+}
+
+span.sheet-heart-text {
+    color: red;
+    left: 200px;
+}
+
+span.sheet-group-text {
+    color: purple;
+    left: 277px;
+}
+
+span.sheet-tech-text {
+    color: goldenrod;
+    left: 365px;
+}
+
+
 
 /* Transparent, round Buttons for rolling Attribute */
 
