@@ -1,3 +1,15 @@
+div.sheet-row {
+    min-width: 900px;
+}
+
+div.sheet-col1 {
+    display: inline-block;
+}
+
+div.sheet-col2 {
+    display: inline-block;
+}
+
 select.sheet-archtype {
     width: 130px;
     vertical-align: baseline;
