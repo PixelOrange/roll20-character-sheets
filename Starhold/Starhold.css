@@ -17,7 +17,6 @@ div.sheet-col1 {
 
 select.sheet-archtype {
     width: 130px;
-    vertical-align: baseline;
 }
 
 div.sheet-name, div.sheet-attitude {
@@ -44,6 +43,7 @@ div.sheet-col2 {
 
 div.sheet-stats {
     position: relative;
+    top: 5px;
 }
 
 input::-webkit-outer-spin-button,
