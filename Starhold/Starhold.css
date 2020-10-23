@@ -171,3 +171,7 @@ span.sheet-tech-text {
     color: goldenrod;
     left: 365px;
 }
+
+input.sheet-intuition {
+    vertical-align: text-top;
+}
