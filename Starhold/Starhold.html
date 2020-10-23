@@ -1,123 +1,50 @@
 <script type="text/worker">
-    on("clicked:intuition", function() {
-        getAttrs(["intuition"], function(value) {
-            if (value.intuition != 1) {
-                setAttrs({ intuition: "1" });
-            } else if (value.intuition == 1) {
-                setAttrs({ intuition: "0" });
-            };
+    function setAttrToggles(name, maxValue) {
+        getAttrs([name], function(attrs) {
+            let toggles = {}
+
+            for (let i = 0; i <= maxValue; i++) {
+                let key = name + i;
+                let value = attrs[name] < i ? "on" : "0";
+                toggles[key] = value;
+            }
+
+            setAttrs(toggles);
         });
+    }
+
+    function toggleSwitch(name) {
+        getAttrs([name], function(attrs) {
+            let toggles = {};
+            let value = attrs[name] == 1 ? "0" : "1";
+            toggles[name] = values;
+            setAttrs(toggles);
+        });
+    }
+
+    on("clicked:intuition", function() {
+        toggleSwitch("intuition");
     });
 
     on("change:intuition", function() {
-        getAttrs(["intuition"], function(value) {
-            if (value.intuition == 0) {
-                toggleIntuition("0","0","0","0","0","0","0");
-            } else if (value.intuition == 1) {
-                toggleIntuition("on","0","0","0","0","0","0");
-            } else if (value.intuition == 2) {
-                toggleIntuition("on","on","0","0","0","0","0");
-            } else if (value.intuition == 3) {
-                toggleIntuition("on","on","on","0","0","0","0");
-            } else if (value.intuition == 4) {
-                toggleIntuition("on","on","on","on","0","0","0");
-            } else if (value.intuition == 5) {
-                toggleIntuition("on","on","on","on","on","0","0");
-            } else if (value.intuition == 6) {
-                toggleIntuition("on","on","on","on","on","on","0");
-            } else if (value.intuition == 7) {
-                toggleIntuition("on","on","on","on","on","on","on");
-            };
-        });
-     });
+        setAttrToggles("intuition", 7);
+    });
 
-    function toggleIntuition(switch1,switch2,switch3,switch4,switch5,switch6,switch7) {
-        setAttrs({ intuition1: switch1 });
-        setAttrs({ intuition2: switch2 });
-        setAttrs({ intuition3: switch3 });
-        setAttrs({ intuition4: switch4 });
-        setAttrs({ intuition5: switch5 });
-        setAttrs({ intuition6: switch6 });
-        setAttrs({ intuition7: switch7 });
-    };
-
-        on("clicked:harm", function() {
-        getAttrs(["harm"], function(value) {
-            if (value.harm != 1) {
-                setAttrs({ harm: "1" });
-            } else if (value.harm == 1) {
-                setAttrs({ harm: "0" });
-            };
-        });
+    on("clicked:harm", function() {
+        toggleSwitch("harm");
     });
 
     on("change:harm", function() {
-        getAttrs(["harm"], function(value) {
-            if (value.harm == 0) {
-                toggleHarm("0","0","0","0","0","0","0");
-            } else if (value.harm == 1) {
-                toggleHarm("on","0","0","0","0","0","0");
-            } else if (value.harm == 2) {
-                toggleHarm("on","on","0","0","0","0","0");
-            } else if (value.harm == 3) {
-                toggleHarm("on","on","on","0","0","0","0");
-            } else if (value.harm == 4) {
-                toggleHarm("on","on","on","on","0","0","0");
-            } else if (value.harm == 5) {
-                toggleHarm("on","on","on","on","on","0","0");
-            } else if (value.harm == 6) {
-                toggleHarm("on","on","on","on","on","on","0");
-            } else if (value.harm == 7) {
-                toggleHarm("on","on","on","on","on","on","on");
-            };
-        });
-     });
+        setAttrToggles("harm", 7);
+    });
 
-    function toggleHarm(switch1,switch2,switch3,switch4,switch5,switch6,switch7) {
-        setAttrs({ harm1: switch1 });
-        setAttrs({ harm2: switch2 });
-        setAttrs({ harm3: switch3 });
-        setAttrs({ harm4: switch4 });
-        setAttrs({ harm5: switch5 });
-        setAttrs({ harm6: switch6 });
-        setAttrs({ harm7: switch7 });
-    };
-
-        on("clicked:stress", function() {
-        getAttrs(["stress"], function(value) {
-            if (value.stress != 1) {
-                setAttrs({ stress: "1" });
-            } else if (value.stress == 1) {
-                setAttrs({ stress: "0" });
-            };
-        });
+    on("clicked:stress", function() {
+        toggleSwitch("stress");
     });
 
     on("change:stress", function() {
-        getAttrs(["stress"], function(value) {
-            if (value.stress == 0) {
-                toggleStress("0","0","0","0","0");
-            } else if (value.stress == 1) {
-                toggleStress("on","0","0","0","0");
-            } else if (value.stress == 2) {
-                toggleStress("on","on","0","0","0");
-            } else if (value.stress == 3) {
-                toggleStress("on","on","on","0","0");
-            } else if (value.stress == 4) {
-                toggleStress("on","on","on","on","0");
-            } else if (value.stress == 5) {
-                toggleStress("on","on","on","on","on");
-            };
-        });
-     });
-
-    function toggleStress(switch1,switch2,switch3,switch4,switch5) {
-        setAttrs({ stress1: switch1 });
-        setAttrs({ stress2: switch2 });
-        setAttrs({ stress3: switch3 });
-        setAttrs({ stress4: switch4 });
-        setAttrs({ stress5: switch5 });
-    };
+        setAttrToggles("stress", 5);
+    });
 </script>
 
 <div class="sheet-row">
