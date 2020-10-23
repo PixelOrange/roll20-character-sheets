@@ -1,3 +1,16 @@
+<script type="text/worker">
+    on("change:archetype", function() {
+        console.log("Change to archetype detected");
+        getAttrs(["archetype"], function(value) {
+            if(value.archetype !== "blank") {
+                setAttrs({ Space: value.archetype });
+            } else {
+                setAttrs({ Space: "" });
+            };
+        });
+    });
+</script>
+
 <div class="sheet-row">
     <div class="sheet-col1">
         <div class="sheet-name">
@@ -9,7 +22,7 @@
             <input type="text" name="attr_attitude" class="sheet-attr-attitude" />
         </div><br /><br />
         <div class="sheet-archetype">
-            <select name="attr_archtype" class="sheet-archtype">
+            <select name="attr_archetype" class="sheet-archetype">
                 <option value="blank">{Archetype}</option>
                 <option value="augmented">The Augmented</option>
                 <option value="civilian">The Civilian</option>
@@ -20,6 +33,89 @@
                 <option value="stowaway">The Stowaway</option>
                 <option value="technician">The Technician</option>
             </select>
+            <!-- These checkboxes determine which dropdown will appear for the variants -->
+            <input type="checkbox" name="attr_archetype" class="sheet-toggle sheet-augmented-toggle" value="augmented" />
+            <input type="checkbox" name="attr_archetype" class="sheet-toggle sheet-civilian-toggle" value="civilian" />
+            <input type="checkbox" name="attr_archetype" class="sheet-toggle sheet-leader-toggle" value="leader" />
+            <input type="checkbox" name="attr_archetype" class="sheet-toggle sheet-muscle-toggle" value="muscle" />
+            <input type="checkbox" name="attr_archetype" class="sheet-toggle sheet-scientist-toggle" value="scientist" />
+            <input type="checkbox" name="attr_archetype" class="sheet-toggle sheet-specialist-toggle" value="specialist" />
+            <input type="checkbox" name="attr_archetype" class="sheet-toggle sheet-stowaway-toggle" value="stowaway" />
+            <input type="checkbox" name="attr_archetype" class="sheet-toggle sheet-technician-toggle" value="technician" />
+            <!-- Variant Options -->
+            <div class="sheet-variant sheet-augmented">
+                <select name="attr_variant" class="sheet-variant">
+                    <option value="blank">{Variant}</option>
+                    <option value="base">Base</option>
+                    <option value="almost-human">The Almost-Human</option>
+                    <option value="construct">The Construct</option>
+                    <option value="cyborg">The Cyborg</option>
+                </select>
+            </div>
+            <div class="sheet-variant sheet-civilian">
+                <select name="attr_variant" class="sheet-variant">
+                    <option value="blank">{Variant}</option>
+                    <option value="base">Base</option>
+                    <option value="entertainer">The Entertainer</option>
+                    <option value="homesteader">The Homesteader</option>
+                    <option value="merchant">The Merchant</option>
+                </select>
+            </div>
+            <div class="sheet-variant sheet-leader">
+                <select name="attr_variant" class="sheet-variant">
+                    <option value="blank">{Variant}</option>
+                    <option value="base">Base</option>
+                    <option value="commander">The Commander</option>
+                    <option value="diplomat">The Diplomat</option>
+                    <option value="shepherd">The Shepherd</option>
+                </select>
+            </div>
+            <div class="sheet-variant sheet-muscle">
+                <select name="attr_variant" class="sheet-variant">
+                    <option value="blank">{Variant}</option>
+                    <option value="base">Base</option>
+                    <option value="ex-marine">The Ex-Marine</option>
+                    <option value="miner">The Miner</option>
+                    <option value="security">The Security</option>
+                </select>
+            </div>
+            <div class="sheet-variant sheet-scientist">
+                <select name="attr_variant" class="sheet-variant">
+                    <option value="blank">{Variant}</option>
+                    <option value="base">Base</option>
+                    <option value="biologist">The Biologist</option>
+                    <option value="chemist">The Chemist</option>
+                    <option value="medic">The Medic</option>
+                </select>
+            </div>
+            <div class="sheet-variant sheet-specialist">
+                <select name="attr_variant" class="sheet-variant">
+                    <option value="blank">{Variant}</option>
+                    <option value="base">Base</option>
+                    <option value="academic">The Academic</option>
+                    <option value="pilot">The Pilot</option>
+                    <option value="weapons-expert">The Weapons Expert</option>
+                </select>
+            </div>
+            <div class="sheet-variant sheet-stowaway">
+                <select name="attr_variant" class="sheet-variant">
+                    <option value="blank">{Variant}</option>
+                    <option value="base">Base</option>
+                    <option value="criminal">The Criminal</option>
+                    <option value="kid">The Kid</option>
+                    <option value="survivor">The Survivor</option>
+                </select>
+            </div>
+            <div class="sheet-variant sheet-technician">
+                <select name="attr_variant" class="sheet-variant">
+                    <option value="blank">{Variant}</option>
+                    <option value="base">Base</option>
+                    <option value="engineer">The Engineer</option>
+                    <option value="Hacker">The Hacker</option>
+                    <option value="mechanic">The Mechanic</option>
+                </select>
+            </div>
+
         </div>
         <div class="sheet-appearance">
             <img src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/appearance.png"><br />
@@ -27,7 +123,7 @@
         </div>
         <div class="sheet-space">
             <img src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/space.png"><br />
-            <textarea name="attr_space" class="sheet-attr-space" readonly>Test</textarea>
+            <textarea name="attr_space" class="sheet-attr-space" readonly></textarea>
         </div>
         <div class="sheet-notes">
             <img src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/notes.png"><br />
@@ -47,6 +143,10 @@
             <input type="number" name="attr_group" class="sheet-group" />
             <span class="sheet-tech-text">Abilities<br />Use Items</span>
             <input type="number" name="attr_tech" class="sheet-tech" />
+        </div>
+        <div class="sheet-intuition">
+            <img src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/intuition.png"><br />
+            <input type="checkbox" name="attr_intuition" class="sheet-intuition sheet-intuition-1" />
         </div>
     </div>
 </div>

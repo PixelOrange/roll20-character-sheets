@@ -15,22 +15,66 @@ div.sheet-col1 {
     display: inline-block;
 }
 
-select.sheet-archtype {
-    width: 130px;
+select.sheet-archetype, .sheet-variant {
+    width: 190px;
 }
 
-div.sheet-name, div.sheet-attitude {
+input.sheet-toggle {
+    display: none;
+}
+
+div.sheet-variant {
+    display: none;
+}
+
+input.sheet-augmented-toggle:checked ~ div.sheet-augmented {
+    display: inline;
+}
+
+input.sheet-civilian-toggle:checked ~ div.sheet-civilian {
+    display: inline;
+}
+
+input.sheet-leader-toggle:checked ~ div.sheet-leader {
+    display: inline;
+}
+
+input.sheet-muscle-toggle:checked ~ div.sheet-muscle {
+    display: inline;
+}
+
+input.sheet-scientist-toggle:checked ~ div.sheet-scientist {
+    display: inline;
+}
+
+input.sheet-specialist-toggle:checked ~ div.sheet-specialist {
+    display: inline;
+}
+
+input.sheet-stowaway-toggle:checked ~ div.sheet-stowaway {
+    display: inline;
+}
+
+input.sheet-technician-toggle:checked ~ div.sheet-technician {
+    display: inline;
+}
+
+div.sheet-name, .sheet-attitude {
     display:inline-block;
     vertical-align:top;
 }
 
-input.sheet-attr-character-name, input.sheet-attr-attitude {
+input.sheet-attr-character-name, .sheet-attr-attitude {
     width: 190px;
     vertical-align: baseline;
 }
 
-textarea.sheet-attr-appearance, textarea.sheet-attr-notes {
+textarea.sheet-attr-appearance, .sheet-attr-space, .sheet-attr-notes {
     width: 373px;
+}
+
+textarea.sheet-attr-space {
+    background: white;
 }
 
 /* Affects Right Column */
@@ -127,26 +171,3 @@ span.sheet-tech-text {
     color: goldenrod;
     left: 365px;
 }
-
-
-
-/* Transparent, round Buttons for rolling Attribute */
-
-button[type=roll].sheet-blank-roll-button::before { content: ""; }
-
-button[type=roll].sheet-blank-roll-button {
-    display:inline-block;
-    width:28px;
-    height:28px;
-    background-color: Transparent;
-    background-image:url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Starhold/Images/Buttons.png);
-    background-repeat:repeat;
-    border: 0px solid transparent;
-    cursor:pointer;
-    overflow: hidden;
-    outline:none;
-    border-radius:50%;
-    margin-top:14px;
-}
-
-/*end of button code*/
