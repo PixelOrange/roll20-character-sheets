@@ -15,7 +15,7 @@ div.sheet-col1 {
     display: inline-block;
 }
 
-select.sheet-archetype, .sheet-variant {
+select.sheet-archetype, select.sheet-variant {
     width: 190px;
 }
 
@@ -59,17 +59,17 @@ input.sheet-technician-toggle:checked ~ div.sheet-technician {
     display: inline;
 }
 
-div.sheet-name, .sheet-attitude {
+div.sheet-name, div.sheet-attitude {
     display:inline-block;
     vertical-align:top;
 }
 
-input.sheet-attr-character-name, .sheet-attr-attitude {
+input.sheet-attr-character-name, input.sheet-attr-attitude {
     width: 190px;
     vertical-align: baseline;
 }
 
-textarea.sheet-attr-appearance, .sheet-attr-space, .sheet-attr-notes {
+textarea.sheet-attr-appearance, textarea.sheet-attr-space, textarea.sheet-attr-notes {
     width: 373px;
 }
 
@@ -82,7 +82,7 @@ textarea.sheet-attr-space {
 div.sheet-col2 {
     display: inline-block;
     vertical-align: top;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 div.sheet-stats {
@@ -100,17 +100,17 @@ input[type=number] {
     -moz-appearance:textfield; /* Firefox */
 }
 
-input.sheet-head, .sheet-hand, .sheet-heart, .sheet-group, .sheet-tech {
+input.sheet-head, input.sheet-hand, input.sheet-heart, input.sheet-group, input.sheet-tech {
     position: absolute;
     font-size: 20px;
     text-align: center;
 }
 
-input.sheet-head, .sheet-heart, .sheet-tech {
+input.sheet-head, input.sheet-heart, input.sheet-tech {
     top: 30px;
 }
 
-input.sheet-hand, .sheet-group {
+input.sheet-hand, input.sheet-group {
     top: 80px;
 }
 
@@ -134,16 +134,16 @@ input.sheet-tech {
     left: 360px;
 }
 
-span.sheet-head-text, .sheet-hand-text, .sheet-heart-text, .sheet-group-text, .sheet-tech-text {
+span.sheet-head-text, span.sheet-hand-text, span.sheet-heart-text, span.sheet-group-text, span.sheet-tech-text {
     position: absolute;
     text-align: center;
 }
 
-span.sheet-head-text, .sheet-heart-text, .sheet-tech-text {
+span.sheet-head-text, span.sheet-heart-text, span.sheet-tech-text {
     top: 105px;
 }
 
-span.sheet-hand-text, .sheet-group-text {
+span.sheet-hand-text, span.sheet-group-text {
     top: 5px;
 }
 
@@ -172,6 +172,48 @@ span.sheet-tech-text {
     left: 365px;
 }
 
-input.sheet-intuition {
-    vertical-align: text-top;
+div.sheet-intuition, div.sheet-harm-stress {
+    padding: 3px;
+    border-style: solid;
+    border-width: 1px;
+    width: 230px;
 }
+
+div.sheet-harm-stress {
+    margin-top: 5px;
+}
+
+input.sheet-intuition-box, input.sheet-harm-box, input.sheet-stress-box {
+    vertical-align: text-top;
+    top: 1px;
+}
+
+input.sheet-intuition-box, input.sheet-harm-box, span.sheet-done-for, span.sheet-dying {
+    position: relative;
+    left: -120px;
+}
+
+input.sheet-stress-box, span.sheet-exhausted {
+    position: relative;
+    left: -87px;
+}
+
+input.sheet-intuition-radio, input.sheet-harm-radio, input.sheet-stress-radio {
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    left: -4px;
+    top: -1px;
+}
+
+button {
+    position: relative;
+    z-index: 1;
+    width: 2px;
+    height: 8px;
+    opacity: 0;
+    left: -2px;
+}
+
+
+
