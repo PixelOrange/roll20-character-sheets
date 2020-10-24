@@ -184,7 +184,7 @@ input.sheet-intuition-selector, input.sheet-intuition-display, input.sheet-harm-
     flex-wrap: nowrap;
 }
 
-button.sheet-harm-selector {
+button.sheet-intuition-selector, button.sheet-harm-selector, button.sheet-stress-selector {
     position: relative;
     vertical-align: text-top;
     margin: 0px;
@@ -193,8 +193,19 @@ button.sheet-harm-selector {
     opacity: 0;
 }
 
-input.sheet-harm-display, span.sheet-dying {
+input.sheet-intuition-display, input.sheet-harm-display, span.sheet-dying, span.sheet-done-for {
     position: relative;
     margin: 0px;
     left: -116.5px;
+    color: red;
+}
+
+input.sheet-stress-display, span.sheet-exhausted {
+    position: relative;
+    margin: 0px;
+    left: -83.5px;
+}
+
+input::-webkit-box-shadow, input::-moz-box-shadow {
+    rgba(255,255,255);
 }

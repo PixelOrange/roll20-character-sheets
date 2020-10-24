@@ -138,13 +138,20 @@
                 <br />to an Incredible Success or to avoid
                 <br />all harm in one event.</p>
             <span>GOOD</span>
-            <input type="checkbox" name="attr_intuition" class="intuition-selector" value="1" />
-            <input type="checkbox" name="attr_intuition" class="intuition-selector" value="2" />
-            <input type="checkbox" name="attr_intuition" class="intuition-selector" value="3" />
-            <input type="checkbox" name="attr_intuition" class="intuition-selector" value="4" />
-            <input type="checkbox" name="attr_intuition" class="intuition-selector" value="5" />
-            <input type="checkbox" name="attr_intuition" class="intuition-selector" value="6" />
-            <input type="checkbox" name="attr_intuition" class="intuition-selector" value="7" />
+            <button type="action" name="act_intuition_1" class="intuition-selector"></button>
+            <button type="action" name="act_intuition_2" class="intuition-selector"></button>
+            <button type="action" name="act_intuition_3" class="intuition-selector"></button>
+            <button type="action" name="act_intuition_4" class="intuition-selector"></button>
+            <button type="action" name="act_intuition_5" class="intuition-selector"></button>
+            <button type="action" name="act_intuition_6" class="intuition-selector"></button>
+            <button type="action" name="act_intuition_7" class="intuition-selector"></button>
+            <input type="checkbox" name="attr_intuition1" class="intuition-display" />
+            <input type="checkbox" name="attr_intuition2" class="intuition-display" />
+            <input type="checkbox" name="attr_intuition3" class="intuition-display" />
+            <input type="checkbox" name="attr_intuition4" class="intuition-display" />
+            <input type="checkbox" name="attr_intuition5" class="intuition-display" />
+            <input type="checkbox" name="attr_intuition6" class="intuition-display" />
+            <input type="checkbox" name="attr_intuition7" class="intuition-display" />
             <span class="done-for">DONE FOR</span>
         </div>
         <div class="harm-stress">
@@ -173,48 +180,62 @@
                 <br />After the 5th stress mark,
                 <br />you are panicked.</p>
             <span>ALRIGHT</span>
-            <input type="checkbox" name="attr_stress" class="stress-selector" value="1" />
-            <input type="checkbox" name="attr_stress" class="stress-selector" value="2" />
-            <input type="checkbox" name="attr_stress" class="stress-selector" value="3" />
-            <input type="checkbox" name="attr_stress" class="stress-selector" value="4" />
-            <input type="checkbox" name="attr_stress" class="stress-selector" value="5" />
+            <button type="action" name="act_stress_1" class="stress-selector"></button>
+            <button type="action" name="act_stress_2" class="stress-selector"></button>
+            <button type="action" name="act_stress_3" class="stress-selector"></button>
+            <button type="action" name="act_stress_4" class="stress-selector"></button>
+            <button type="action" name="act_stress_5" class="stress-selector"></button>
+            <input type="checkbox" name="attr_stress1" class="stress-display" />
+            <input type="checkbox" name="attr_stress2" class="stress-display" />
+            <input type="checkbox" name="attr_stress3" class="stress-display" />
+            <input type="checkbox" name="attr_stress4" class="stress-display" />
+            <input type="checkbox" name="attr_stress5" class="stress-display" />
             <span class="exhausted">EXHAUSTED</span>
         </div>
     </div>
 </div>
 
 <script type="text/worker">
+    const intuitionValues = ["1","2","3","4","5","6","7"];
     const harmValues = ["1","2","3","4","5","6","7"];
-    harmValues.forEach(function(value) {
-        on(`clicked:harm_${value}`, function() {
-            getAttrs(["harm"], function(level) {
-                let setValue = value;
-                console.log("Harm Level: " + level.harm);
-                console.log("Value: " + value);
-                if (level.harm == 1) {
-                    console.log("If Statement Value: " + value);
-                    if (value == 1) {
-                        setValue = 0;
-                    };
-                };
-                setAttrs({ "harm": setValue });
-                updateDisplay("harm", setValue, harmValues);
-            });
+    const stressValues =  ["1","2","3","4","5"];
+
+    intuitionValues.forEach(function(value) {
+        on(`clicked:intuition_${value}`, function() {
+            updateAttributes("intuition", value, intuitionValues);
         });
     });
 
-    function updateDisplay(name,value,range) {
-        console.log("Update value: " + value);
-        range.forEach(function(count) {
-            if (value >= count) {
-                let selector = name + count;
-                console.log(selector);
-                setAttrs({ [selector]: "on" });
-            } else {
-                let selector = name + count;
-                console.log(selector);
-                setAttrs({ [selector]: "off" });
+    harmValues.forEach(function(value) {
+        on(`clicked:harm_${value}`, function() {
+            updateAttributes("harm", value, harmValues);
+        });
+    });
+
+    stressValues.forEach(function(value) {
+        on(`clicked:stress_${value}`, function() {
+            updateAttributes("stress", value, stressValues);
+        });
+    });
+
+    function updateAttributes(key, value, range) {
+        getAttrs([key], function(level) {
+            if (level[key] == 1) {
+                if (value == 1) {
+                    value = 0;
+                };
             };
+            setAttrs({ [key]: value });
+            range.forEach(function(count) {
+                if (value >= count) {
+                    let selector = key + count;
+                    setAttrs({ [selector]: "on" });
+                } else {
+                    let selector = key + count;
+                    setAttrs({ [selector]: "off" });
+                };
+            });
         });
     };
+
 </script>
