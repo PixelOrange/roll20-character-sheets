@@ -1,137 +1,15 @@
-<script type="text/worker">
-    on("clicked:intuition", function() {
-        getAttrs(["intuition"], function(value) {
-            if (value.intuition != 1) {
-                setAttrs({ intuition: "1" });
-            } else if (value.intuition == 1) {
-                setAttrs({ intuition: "0" });
-            };
-        });
-    });
-
-    on("change:intuition", function() {
-        getAttrs(["intuition"], function(value) {
-            if (value.intuition == 0) {
-                toggleIntuition("0","0","0","0","0","0","0");
-            } else if (value.intuition == 1) {
-                toggleIntuition("on","0","0","0","0","0","0");
-            } else if (value.intuition == 2) {
-                toggleIntuition("on","on","0","0","0","0","0");
-            } else if (value.intuition == 3) {
-                toggleIntuition("on","on","on","0","0","0","0");
-            } else if (value.intuition == 4) {
-                toggleIntuition("on","on","on","on","0","0","0");
-            } else if (value.intuition == 5) {
-                toggleIntuition("on","on","on","on","on","0","0");
-            } else if (value.intuition == 6) {
-                toggleIntuition("on","on","on","on","on","on","0");
-            } else if (value.intuition == 7) {
-                toggleIntuition("on","on","on","on","on","on","on");
-            };
-        });
-     });
-
-    function toggleIntuition(switch1,switch2,switch3,switch4,switch5,switch6,switch7) {
-        setAttrs({ intuition1: switch1 });
-        setAttrs({ intuition2: switch2 });
-        setAttrs({ intuition3: switch3 });
-        setAttrs({ intuition4: switch4 });
-        setAttrs({ intuition5: switch5 });
-        setAttrs({ intuition6: switch6 });
-        setAttrs({ intuition7: switch7 });
-    };
-
-        on("clicked:harm", function() {
-        getAttrs(["harm"], function(value) {
-            if (value.harm != 1) {
-                setAttrs({ harm: "1" });
-            } else if (value.harm == 1) {
-                setAttrs({ harm: "0" });
-            };
-        });
-    });
-
-    on("change:harm", function() {
-        getAttrs(["harm"], function(value) {
-            if (value.harm == 0) {
-                toggleHarm("0","0","0","0","0","0","0");
-            } else if (value.harm == 1) {
-                toggleHarm("on","0","0","0","0","0","0");
-            } else if (value.harm == 2) {
-                toggleHarm("on","on","0","0","0","0","0");
-            } else if (value.harm == 3) {
-                toggleHarm("on","on","on","0","0","0","0");
-            } else if (value.harm == 4) {
-                toggleHarm("on","on","on","on","0","0","0");
-            } else if (value.harm == 5) {
-                toggleHarm("on","on","on","on","on","0","0");
-            } else if (value.harm == 6) {
-                toggleHarm("on","on","on","on","on","on","0");
-            } else if (value.harm == 7) {
-                toggleHarm("on","on","on","on","on","on","on");
-            };
-        });
-     });
-
-    function toggleHarm(switch1,switch2,switch3,switch4,switch5,switch6,switch7) {
-        setAttrs({ harm1: switch1 });
-        setAttrs({ harm2: switch2 });
-        setAttrs({ harm3: switch3 });
-        setAttrs({ harm4: switch4 });
-        setAttrs({ harm5: switch5 });
-        setAttrs({ harm6: switch6 });
-        setAttrs({ harm7: switch7 });
-    };
-
-        on("clicked:stress", function() {
-        getAttrs(["stress"], function(value) {
-            if (value.stress != 1) {
-                setAttrs({ stress: "1" });
-            } else if (value.stress == 1) {
-                setAttrs({ stress: "0" });
-            };
-        });
-    });
-
-    on("change:stress", function() {
-        getAttrs(["stress"], function(value) {
-            if (value.stress == 0) {
-                toggleStress("0","0","0","0","0");
-            } else if (value.stress == 1) {
-                toggleStress("on","0","0","0","0");
-            } else if (value.stress == 2) {
-                toggleStress("on","on","0","0","0");
-            } else if (value.stress == 3) {
-                toggleStress("on","on","on","0","0");
-            } else if (value.stress == 4) {
-                toggleStress("on","on","on","on","0");
-            } else if (value.stress == 5) {
-                toggleStress("on","on","on","on","on");
-            };
-        });
-     });
-
-    function toggleStress(switch1,switch2,switch3,switch4,switch5) {
-        setAttrs({ stress1: switch1 });
-        setAttrs({ stress2: switch2 });
-        setAttrs({ stress3: switch3 });
-        setAttrs({ stress4: switch4 });
-        setAttrs({ stress5: switch5 });
-    };
-</script>
-
-<div class="sheet-row">
-    <div class="sheet-col1">
-        <div class="sheet-name">
+<div class="flex-section">
+    <div class="col1">
+        <div class="name">
             <img src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/name.png"><br />
-            <input type="text" name="attr_character" class="sheet-attr-character-name" />
+            <input type="text" name="attr_character" class="character-name" />
         </div>
-        <div class="sheet-attitude">
+        <div class="attitude">
             <img src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/attitude.png"><br />
-            <input type="text" name="attr_attitude" class="sheet-attr-attitude" />
+            <input type="text" name="attr_attitude" class="attitude" />
         </div><br /><br />
-        <div class="sheet-archetype">
-            <select name="attr_archetype" class="sheet-archetype">
+        <div class="archetype">
+            <select name="attr_archetype" class="archetype">
                 <option value="blank">{Archetype}</option>
                 <option value="augmented">The Augmented</option>
                 <option value="civilian">The Civilian</option>
@@ -143,17 +21,17 @@
                 <option value="technician">The Technician</option>
             </select>
             <!-- These checkboxes determine which dropdown will appear for the variants -->
-            <input type="checkbox" name="attr_archetype" class="sheet-toggle sheet-augmented-toggle" value="augmented" />
-            <input type="checkbox" name="attr_archetype" class="sheet-toggle sheet-civilian-toggle" value="civilian" />
-            <input type="checkbox" name="attr_archetype" class="sheet-toggle sheet-leader-toggle" value="leader" />
-            <input type="checkbox" name="attr_archetype" class="sheet-toggle sheet-muscle-toggle" value="muscle" />
-            <input type="checkbox" name="attr_archetype" class="sheet-toggle sheet-scientist-toggle" value="scientist" />
-            <input type="checkbox" name="attr_archetype" class="sheet-toggle sheet-specialist-toggle" value="specialist" />
-            <input type="checkbox" name="attr_archetype" class="sheet-toggle sheet-stowaway-toggle" value="stowaway" />
-            <input type="checkbox" name="attr_archetype" class="sheet-toggle sheet-technician-toggle" value="technician" />
+            <input type="checkbox" name="attr_archetype" class="toggle augmented-toggle" value="augmented" />
+            <input type="checkbox" name="attr_archetype" class="toggle civilian-toggle" value="civilian" />
+            <input type="checkbox" name="attr_archetype" class="toggle leader-toggle" value="leader" />
+            <input type="checkbox" name="attr_archetype" class="toggle muscle-toggle" value="muscle" />
+            <input type="checkbox" name="attr_archetype" class="toggle scientist-toggle" value="scientist" />
+            <input type="checkbox" name="attr_archetype" class="toggle specialist-toggle" value="specialist" />
+            <input type="checkbox" name="attr_archetype" class="toggle stowaway-toggle" value="stowaway" />
+            <input type="checkbox" name="attr_archetype" class="toggle technician-toggle" value="technician" />
             <!-- Variant Options -->
-            <div class="sheet-variant sheet-augmented">
-                <select name="attr_variant" class="sheet-variant">
+            <div class="variant augmented">
+                <select name="attr_variant" class="variant">
                     <option value="blank">{Variant}</option>
                     <option value="base">Base</option>
                     <option value="almost-human">The Almost-Human</option>
@@ -161,8 +39,8 @@
                     <option value="cyborg">The Cyborg</option>
                 </select>
             </div>
-            <div class="sheet-variant sheet-civilian">
-                <select name="attr_variant" class="sheet-variant">
+            <div class="variant civilian">
+                <select name="attr_variant" class="variant">
                     <option value="blank">{Variant}</option>
                     <option value="base">Base</option>
                     <option value="entertainer">The Entertainer</option>
@@ -170,8 +48,8 @@
                     <option value="merchant">The Merchant</option>
                 </select>
             </div>
-            <div class="sheet-variant sheet-leader">
-                <select name="attr_variant" class="sheet-variant">
+            <div class="variant leader">
+                <select name="attr_variant" class="variant">
                     <option value="blank">{Variant}</option>
                     <option value="base">Base</option>
                     <option value="commander">The Commander</option>
@@ -179,8 +57,8 @@
                     <option value="shepherd">The Shepherd</option>
                 </select>
             </div>
-            <div class="sheet-variant sheet-muscle">
-                <select name="attr_variant" class="sheet-variant">
+            <div class="variant muscle">
+                <select name="attr_variant" class="variant">
                     <option value="blank">{Variant}</option>
                     <option value="base">Base</option>
                     <option value="ex-marine">The Ex-Marine</option>
@@ -188,8 +66,8 @@
                     <option value="security">The Security</option>
                 </select>
             </div>
-            <div class="sheet-variant sheet-scientist">
-                <select name="attr_variant" class="sheet-variant">
+            <div class="variant scientist">
+                <select name="attr_variant" class="variant">
                     <option value="blank">{Variant}</option>
                     <option value="base">Base</option>
                     <option value="biologist">The Biologist</option>
@@ -197,8 +75,8 @@
                     <option value="medic">The Medic</option>
                 </select>
             </div>
-            <div class="sheet-variant sheet-specialist">
-                <select name="attr_variant" class="sheet-variant">
+            <div class="variant specialist">
+                <select name="attr_variant" class="variant">
                     <option value="blank">{Variant}</option>
                     <option value="base">Base</option>
                     <option value="academic">The Academic</option>
@@ -206,8 +84,8 @@
                     <option value="weapons-expert">The Weapons Expert</option>
                 </select>
             </div>
-            <div class="sheet-variant sheet-stowaway">
-                <select name="attr_variant" class="sheet-variant">
+            <div class="variant stowaway">
+                <select name="attr_variant" class="variant">
                     <option value="blank">{Variant}</option>
                     <option value="base">Base</option>
                     <option value="criminal">The Criminal</option>
@@ -215,8 +93,8 @@
                     <option value="survivor">The Survivor</option>
                 </select>
             </div>
-            <div class="sheet-variant sheet-technician">
-                <select name="attr_variant" class="sheet-variant">
+            <div class="variant technician">
+                <select name="attr_variant" class="variant">
                     <option value="blank">{Variant}</option>
                     <option value="base">Base</option>
                     <option value="engineer">The Engineer</option>
@@ -226,93 +104,117 @@
             </div>
 
         </div>
-        <div class="sheet-appearance">
+        <div class="appearance">
             <img src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/appearance.png"><br />
-            <textarea name="attr_appearance" class="sheet-attr-appearance"></textarea>
+            <textarea name="attr_appearance" class="attr-appearance"></textarea>
         </div>
-        <div class="sheet-space">
+        <div class="space">
             <img src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/space.png"><br />
-            <textarea name="attr_space" class="sheet-attr-space" readonly></textarea>
+            <div name="attr_space" class="attr-space"></div>
         </div>
-        <div class="sheet-notes">
+        <div class="notes">
             <img src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/notes.png"><br />
-            <textarea name="attr_notes" class="sheet-attr-notes"></textarea>
+            <textarea name="attr_notes" class="attr-notes"></textarea>
         </div>
     </div>
-    <div class='sheet-col2'>
-        <div class="sheet-stats">
-            <img class="sheet-statblock" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/stats.png">
-            <span class="sheet-head-text">Planning<br />Intelligence</span>
-            <input type="number" name="attr_head" class="sheet-head" />
-            <span class="sheet-hand-text">Strength<br />Combat</span>
-            <input type="number" name="attr_hand" class="sheet-hand" />
-            <span class="sheet-heart-text">Stability<br />Empathy</span>
-            <input type="number" name="attr_heart" class="sheet-heart" />
-            <span class="sheet-group-text">Negotiation<br />Networking</span>
-            <input type="number" name="attr_group" class="sheet-group" />
-            <span class="sheet-tech-text">Abilities<br />Use Items</span>
-            <input type="number" name="attr_tech" class="sheet-tech" />
+    <div class='col2'>
+        <div class="stats">
+            <img class="statblock" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/stats.png">
+            <span class="head-text">Planning<br />Intelligence</span>
+            <input type="number" name="attr_head" class="head" />
+            <span class="hand-text">Strength<br />Combat</span>
+            <input type="number" name="attr_hand" class="hand" />
+            <span class="heart-text">Stability<br />Empathy</span>
+            <input type="number" name="attr_heart" class="heart" />
+            <span class="group-text">Negotiation<br />Networking</span>
+            <input type="number" name="attr_group" class="group" />
+            <span class="tech-text">Abilities<br />Use Items</span>
+            <input type="number" name="attr_tech" class="tech" />
         </div>
         <br />
-        <div class="sheet-intuition">
+        <div class="intuition">
             <img src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/intuition.png"><br />
-            <p class="sheet-intuition-description">Remove an Intuition to change a roll
+            <p class="intuition-description">Remove an Intuition to change a roll
                 <br />to an Incredible Success or to avoid
                 <br />all harm in one event.</p>
             <span>GOOD</span>
-            <button type="action" name="act_intuition"></button>
-            <input type="radio" name="attr_intuition" class="sheet-intuition-radio" value="2"/>
-            <input type="radio" name="attr_intuition" class="sheet-intuition-radio" value="3"/>
-            <input type="radio" name="attr_intuition" class="sheet-intuition-radio" value="4"/>
-            <input type="radio" name="attr_intuition" class="sheet-intuition-radio" value="5"/>
-            <input type="radio" name="attr_intuition" class="sheet-intuition-radio" value="6"/>
-            <input type="radio" name="attr_intuition" class="sheet-intuition-radio" value="7"/>
-            <input type="checkbox" name="attr_intuition1" class="sheet-intuition-box" />
-            <input type="checkbox" name="attr_intuition2" class="sheet-intuition-box" />
-            <input type="checkbox" name="attr_intuition3" class="sheet-intuition-box" />
-            <input type="checkbox" name="attr_intuition4" class="sheet-intuition-box" />
-            <input type="checkbox" name="attr_intuition5" class="sheet-intuition-box" />
-            <input type="checkbox" name="attr_intuition6" class="sheet-intuition-box" />
-            <input type="checkbox" name="attr_intuition7" class="sheet-intuition-box" />
-            <span class="sheet-done-for">DONE FOR</span>
+            <input type="checkbox" name="attr_intuition" class="intuition-selector" value="1" />
+            <input type="checkbox" name="attr_intuition" class="intuition-selector" value="2" />
+            <input type="checkbox" name="attr_intuition" class="intuition-selector" value="3" />
+            <input type="checkbox" name="attr_intuition" class="intuition-selector" value="4" />
+            <input type="checkbox" name="attr_intuition" class="intuition-selector" value="5" />
+            <input type="checkbox" name="attr_intuition" class="intuition-selector" value="6" />
+            <input type="checkbox" name="attr_intuition" class="intuition-selector" value="7" />
+            <span class="done-for">DONE FOR</span>
         </div>
-        <div class="sheet-harm-stress">
+        <div class="harm-stress">
             <img src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/harmstress.png"><br />
-            <p class="sheet-harm-description">Mark a harm when you’re injured.
+            <p class="harm-description">Mark a harm when you’re injured.
                 <br>At 5 harm you are unstable.</p>
             <span>HEALTHY</span>
-            <button type="action" name="act_harm"></button>
-            <input type="radio" name="attr_harm" class="sheet-harm-radio" value="2"/>
-            <input type="radio" name="attr_harm" class="sheet-harm-radio" value="3"/>
-            <input type="radio" name="attr_harm" class="sheet-harm-radio" value="4"/>
-            <input type="radio" name="attr_harm" class="sheet-harm-radio" value="5"/>
-            <input type="radio" name="attr_harm" class="sheet-harm-radio" value="6"/>
-            <input type="radio" name="attr_harm" class="sheet-harm-radio" value="7"/>
-            <input type="checkbox" name="attr_harm1" class="sheet-harm-box" />
-            <input type="checkbox" name="attr_harm2" class="sheet-harm-box" />
-            <input type="checkbox" name="attr_harm3" class="sheet-harm-box" />
-            <input type="checkbox" name="attr_harm4" class="sheet-harm-box" />
-            <input type="checkbox" name="attr_harm5" class="sheet-harm-box" />
-            <input type="checkbox" name="attr_harm6" class="sheet-harm-box" />
-            <input type="checkbox" name="attr_harm7" class="sheet-harm-box" />
-            <span class="sheet-dying">DYING</span>
+            <button type="action" name="act_harm_1" class="harm-selector"></button>
+            <button type="action" name="act_harm_2" class="harm-selector"></button>
+            <button type="action" name="act_harm_3" class="harm-selector"></button>
+            <button type="action" name="act_harm_4" class="harm-selector"></button>
+            <button type="action" name="act_harm_5" class="harm-selector"></button>
+            <button type="action" name="act_harm_6" class="harm-selector"></button>
+            <button type="action" name="act_harm_7" class="harm-selector"></button>
+            <input type="checkbox" name="attr_harm1" class="harm-display" />
+            <input type="checkbox" name="attr_harm2" class="harm-display" />
+            <input type="checkbox" name="attr_harm3" class="harm-display" />
+            <input type="checkbox" name="attr_harm4" class="harm-display" />
+            <input type="checkbox" name="attr_harm5" class="harm-display" />
+            <input type="checkbox" name="attr_harm6" class="harm-display" />
+            <input type="checkbox" name="attr_harm7" class="harm-display" />
+            <span class="dying">DYING</span>
             <br /><br />
-            <p class="sheet-stress-description">Mark a stress when directed.
+            <p class="stress-description">Mark a stress when directed.
                 <br />Erase a mark after downtime.
                 <br />After the 5th stress mark,
                 <br />you are panicked.</p>
             <span>ALRIGHT</span>
-            <button type="action" name="act_stress"></button>
-            <input type="radio" name="attr_stress" class="sheet-stress-radio" value="2"/>
-            <input type="radio" name="attr_stress" class="sheet-stress-radio" value="3"/>
-            <input type="radio" name="attr_stress" class="sheet-stress-radio" value="4"/>
-            <input type="radio" name="attr_stress" class="sheet-stress-radio" value="5"/>
-            <input type="checkbox" name="attr_stress1" class="sheet-stress-box" />
-            <input type="checkbox" name="attr_stress2" class="sheet-stress-box" />
-            <input type="checkbox" name="attr_stress3" class="sheet-stress-box" />
-            <input type="checkbox" name="attr_stress4" class="sheet-stress-box" />
-            <input type="checkbox" name="attr_stress5" class="sheet-stress-box" />
-            <span class="sheet-exhausted">EXHAUSTED</span>
+            <input type="checkbox" name="attr_stress" class="stress-selector" value="1" />
+            <input type="checkbox" name="attr_stress" class="stress-selector" value="2" />
+            <input type="checkbox" name="attr_stress" class="stress-selector" value="3" />
+            <input type="checkbox" name="attr_stress" class="stress-selector" value="4" />
+            <input type="checkbox" name="attr_stress" class="stress-selector" value="5" />
+            <span class="exhausted">EXHAUSTED</span>
         </div>
     </div>
 </div>
+
+<script type="text/worker">
+    const harmValues = ["1","2","3","4","5","6","7"];
+    harmValues.forEach(function(value) {
+        on(`clicked:harm_${value}`, function() {
+            getAttrs(["harm"], function(level) {
+                let setValue = value;
+                console.log("Harm Level: " + level.harm);
+                console.log("Value: " + value);
+                if (level.harm == 1) {
+                    console.log("If Statement Value: " + value);
+                    if (value == 1) {
+                        setValue = 0;
+                    };
+                };
+                setAttrs({ "harm": setValue });
+                updateDisplay("harm", setValue, harmValues);
+            });
+        });
+    });
+
+    function updateDisplay(name,value,range) {
+        console.log("Update value: " + value);
+        range.forEach(function(count) {
+            if (value >= count) {
+                let selector = name + count;
+                console.log(selector);
+                setAttrs({ [selector]: "on" });
+            } else {
+                let selector = name + count;
+                console.log(selector);
+                setAttrs({ [selector]: "off" });
+            };
+        });
+    };
+</script>

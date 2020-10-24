@@ -4,26 +4,32 @@ span.sheet-text {
 font-family: "Lucida Console"
 }
 
-div.sheet-row {
-    min-width: 900px;
-    white-space: nowrap;
+div.sheet-flex-section {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 850px;
+    border: solid;
 }
 
 /* Affects Left Column */
 
-div.sheet-col1 {
-    display: inline-block;
+div.sheet-name, div.sheet-attitude {
+    display:inline-block;
+    vertical-align:top;
+}
+
+input.sheet-character-name, input.sheet-attitude {
+    width: 190px;
+    vertical-align: baseline;
+    border: 1px solid;
 }
 
 select.sheet-archetype, select.sheet-variant {
     width: 190px;
+    border: 1px solid;
 }
 
-input.sheet-toggle {
-    display: none;
-}
-
-div.sheet-variant {
+input.sheet-toggle, div.sheet-variant {
     display: none;
 }
 
@@ -59,30 +65,22 @@ input.sheet-technician-toggle:checked ~ div.sheet-technician {
     display: inline;
 }
 
-div.sheet-name, div.sheet-attitude {
-    display:inline-block;
-    vertical-align:top;
-}
-
-input.sheet-attr-character-name, input.sheet-attr-attitude {
-    width: 190px;
-    vertical-align: baseline;
-}
-
-textarea.sheet-attr-appearance, textarea.sheet-attr-space, textarea.sheet-attr-notes {
+textarea.sheet-attr-appearance, div.sheet-attr-space, textarea.sheet-attr-notes {
+    border: 1px solid;
+    background: white;
     width: 373px;
 }
 
-textarea.sheet-attr-space {
-    background: white;
+div.sheet-attr-space {
+    height: 100px;
+    width: 381px;
 }
 
 /* Affects Right Column */
 
 div.sheet-col2 {
-    display: inline-block;
-    vertical-align: top;
-    margin-left: 10px;
+    position: relative;
+    left: 10px;
 }
 
 div.sheet-stats {
@@ -174,46 +172,29 @@ span.sheet-tech-text {
 
 div.sheet-intuition, div.sheet-harm-stress {
     padding: 3px;
-    border-style: solid;
-    border-width: 1px;
+    border: 1px solid;
     width: 230px;
-}
-
-div.sheet-harm-stress {
     margin-top: 5px;
+    white-space: nowrap;
 }
 
-input.sheet-intuition-box, input.sheet-harm-box, input.sheet-stress-box {
+input.sheet-intuition-selector, input.sheet-intuition-display, input.sheet-harm-selector, input.sheet-harm-display, input.sheet-stress-selector, input.sheet-stress-display {
+    position: relative;
     vertical-align: text-top;
-    top: 1px;
+    flex-wrap: nowrap;
 }
 
-input.sheet-intuition-box, input.sheet-harm-box, span.sheet-done-for, span.sheet-dying {
+button.sheet-harm-selector {
     position: relative;
-    left: -120px;
-}
-
-input.sheet-stress-box, span.sheet-exhausted {
-    position: relative;
-    left: -87px;
-}
-
-input.sheet-intuition-radio, input.sheet-harm-radio, input.sheet-stress-radio {
-    position: relative;
+    vertical-align: text-top;
+    margin: 0px;
+    padding: 4.5px;
     z-index: 1;
     opacity: 0;
-    left: -4px;
-    top: -1px;
 }
 
-button {
+input.sheet-harm-display, span.sheet-dying {
     position: relative;
-    z-index: 1;
-    width: 2px;
-    height: 8px;
-    opacity: 0;
-    left: -2px;
+    margin: 0px;
+    left: -116.5px;
 }
-
-
-
