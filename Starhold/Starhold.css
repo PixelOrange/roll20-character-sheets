@@ -4,22 +4,19 @@ span, textarea, p {
     font-family: "Lucida Console"
 }
 
-div.sheet-flex-section {
-    display: flex;
-    flex-wrap: nowrap;
-    width: 850px;
-    border: solid;
-}
-
-div.sheet-col1 {
-    white-space: nowrap;
-}
-
 input, select, textarea {
     border: 1px solid;
 }
 
 /* Affects Left Column */
+
+div.sheet-col1 {
+    position: absolute;
+    min-width: 400px;
+    left: 1px;
+    white-space: nowrap;
+    border: solid;
+}
 
 div.sheet-name, div.sheet-attitude {
     position: relative;
@@ -33,11 +30,16 @@ input.sheet-character-name {
 }
 
 input.sheet-attitude {
-    width: 166px;
+    width: 168px;
+}
+
+div.sheet-class-select {
+    position: relative;
+    min-height: 80px;
 }
 
 select.sheet-archetype, select.sheet-variant {
-    width: 191px;
+    width: 192px;
 }
 
 span.sheet-variant {
@@ -45,7 +47,7 @@ span.sheet-variant {
 }
 
 select.sheet-skill-points {
-    width: 389px;
+    width: 391px;
 }
 
 input.sheet-archetype-switch[value="augmented"] ~ span.sheet-augmented {
@@ -81,30 +83,21 @@ input.sheet-archetype-switch[value="technician"] ~ span.sheet-technician {
 }
 
 div.sheet-appearance, div.sheet-space, div.sheet-notes {
-    position: absolute;
-}
-
-div.sheet-appearance {
-    top: 200px;
-}
-
-div.sheet-space {
-    top: 390px;
-}
-
-div.sheet-notes {
-    top: 575px;
+    position: relative;
 }
 
 textarea.sheet-attr-appearance, textarea.sheet-attr-space, textarea.sheet-attr-notes {
     background: white;
-    width: 379px;
+    width: 381px;
 }
 
 /* Affects Right Column */
 
 div.sheet-col2 {
-    margin-left: 10px;
+    position: absolute;
+    min-width: 460px;
+    left: 410px;
+    border: solid;
 }
 
 div.sheet-stats {
@@ -167,12 +160,12 @@ span.sheet-head-text {
 
 span.sheet-hand-text {
     color: green;
-    left: 110px;
+    left: 109px;
 }
 
 span.sheet-heart-text {
     color: red;
-    left: 190px;
+    left: 189px;
 }
 
 span.sheet-group-text {
@@ -182,15 +175,17 @@ span.sheet-group-text {
 
 span.sheet-tech-text {
     color: goldenrod;
-    left: 365px;
+    left: 360px;
 }
 
-div.sheet-intuition, div.sheet-harm-stress {
+div.sheet-intuition, div.sheet-moves, div.sheet-harm-stress {
     position: relative;
+    display: inline-block;
     padding: 3px;
     border: 1px solid;
-    width: 215px;
-    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 214px;
+    vertical-align: top;
 }
 
 div.sheet-intuition-tracker, div.sheet-harm-tracker, div.sheet-stress-tracker {
@@ -214,7 +209,7 @@ button.sheet-intuition-selector, button.sheet-harm-selector, button.sheet-stress
 input.sheet-intuition-display, input.sheet-harm-display, span.sheet-dying, span.sheet-done-for {
     position: relative;
     margin: 0px;
-    left: -116.5px;
+    left: -116.4px;
 }
 
 input.sheet-stress-display, span.sheet-exhausted {
@@ -240,4 +235,9 @@ input.sheet-intuition-display, input.sheet-harm-display, input.sheet-stress-disp
 
 input.sheet-intuition-display:checked, input.sheet-harm-display:checked, input.sheet-stress-display:checked {
     background-color: red;
+}
+
+div.sheet-moves {
+    position: relative;
+    top: -120px;
 }
