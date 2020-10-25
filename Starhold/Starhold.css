@@ -19,61 +19,56 @@ div.sheet-name, div.sheet-attitude {
 }
 
 input.sheet-character-name, input.sheet-attitude {
-    width: 190px;
+    width: 170px;
     vertical-align: baseline;
     border: 1px solid;
 }
 
 select.sheet-archetype, select.sheet-variant {
-    width: 190px;
+    width: 170px;
     border: 1px solid;
 }
 
-input.sheet-toggle, div.sheet-variant {
+div.sheet-variant {
     display: none;
 }
 
-input.sheet-augmented-toggle:checked ~ div.sheet-augmented {
+input.sheet-archetype-switch[value="augmented"] ~ div.sheet-augmented {
     display: inline;
 }
 
-input.sheet-civilian-toggle:checked ~ div.sheet-civilian {
+input.sheet-archetype-switch[value="civilian"] ~ div.sheet-civilian {
     display: inline;
 }
 
-input.sheet-leader-toggle:checked ~ div.sheet-leader {
+input.sheet-archetype-switch[value="leader"] ~ div.sheet-leader {
     display: inline;
 }
 
-input.sheet-muscle-toggle:checked ~ div.sheet-muscle {
+input.sheet-archetype-switch[value="muscle"] ~ div.sheet-muscle {
     display: inline;
 }
 
-input.sheet-scientist-toggle:checked ~ div.sheet-scientist {
+input.sheet-archetype-switch[value="scientist"] ~ div.sheet-scientist {
     display: inline;
 }
 
-input.sheet-specialist-toggle:checked ~ div.sheet-specialist {
+input.sheet-archetype-switch[value="specialist"] ~ div.sheet-specialist {
     display: inline;
 }
 
-input.sheet-stowaway-toggle:checked ~ div.sheet-stowaway {
+input.sheet-archetype-switch[value="stowaway"] ~ div.sheet-stowaway {
     display: inline;
 }
 
-input.sheet-technician-toggle:checked ~ div.sheet-technician {
+input.sheet-archetype-switch[value="technician"] ~ div.sheet-technician {
     display: inline;
 }
 
-textarea.sheet-attr-appearance, div.sheet-attr-space, textarea.sheet-attr-notes {
+textarea.sheet-attr-appearance, textarea.sheet-attr-space, textarea.sheet-attr-notes {
     border: 1px solid;
     background: white;
     width: 373px;
-}
-
-div.sheet-attr-space {
-    height: 100px;
-    width: 381px;
 }
 
 /* Affects Right Column */
@@ -197,7 +192,6 @@ input.sheet-intuition-display, input.sheet-harm-display, span.sheet-dying, span.
     position: relative;
     margin: 0px;
     left: -116.5px;
-    color: red;
 }
 
 input.sheet-stress-display, span.sheet-exhausted {
@@ -206,6 +200,21 @@ input.sheet-stress-display, span.sheet-exhausted {
     left: -83.5px;
 }
 
-input::-webkit-box-shadow, input::-moz-box-shadow {
-    rgba(255,255,255);
+input.sheet-intuition-display, input.sheet-harm-display, input.sheet-stress-display {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    padding: 5.5px;
+    height: 3px;
+    width: 3px;
+    margin: 0;
+    border: 1px solid;
+    outline: none;
+    cursor: pointer;
+    background-color: white;
+}
+
+input.sheet-intuition-display:checked, input.sheet-harm-display:checked, input.sheet-stress-display:checked {
+    background-color: red;
 }

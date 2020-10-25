@@ -20,21 +20,15 @@
                 <option value="stowaway">The Stowaway</option>
                 <option value="technician">The Technician</option>
             </select>
-            <!-- These checkboxes determine which dropdown will appear for the variants -->
-            <input type="checkbox" name="attr_archetype" class="toggle augmented-toggle" value="augmented" />
-            <input type="checkbox" name="attr_archetype" class="toggle civilian-toggle" value="civilian" />
-            <input type="checkbox" name="attr_archetype" class="toggle leader-toggle" value="leader" />
-            <input type="checkbox" name="attr_archetype" class="toggle muscle-toggle" value="muscle" />
-            <input type="checkbox" name="attr_archetype" class="toggle scientist-toggle" value="scientist" />
-            <input type="checkbox" name="attr_archetype" class="toggle specialist-toggle" value="specialist" />
-            <input type="checkbox" name="attr_archetype" class="toggle stowaway-toggle" value="stowaway" />
-            <input type="checkbox" name="attr_archetype" class="toggle technician-toggle" value="technician" />
-            <!-- Variant Options -->
+
+            <!-- Used for class switching -->
+            <input name="attr_archetype" type="hidden" class="archetype-switch" />
+
             <div class="variant augmented">
                 <select name="attr_variant" class="variant">
                     <option value="blank">{Variant}</option>
-                    <option value="base">Base</option>
-                    <option value="almost-human">The Almost-Human</option>
+                    <option value="augmentedBase">Base</option>
+                    <option value="almostHuman">The Almost-Human</option>
                     <option value="construct">The Construct</option>
                     <option value="cyborg">The Cyborg</option>
                 </select>
@@ -42,7 +36,7 @@
             <div class="variant civilian">
                 <select name="attr_variant" class="variant">
                     <option value="blank">{Variant}</option>
-                    <option value="base">Base</option>
+                    <option value="civilianBase">Base</option>
                     <option value="entertainer">The Entertainer</option>
                     <option value="homesteader">The Homesteader</option>
                     <option value="merchant">The Merchant</option>
@@ -51,7 +45,7 @@
             <div class="variant leader">
                 <select name="attr_variant" class="variant">
                     <option value="blank">{Variant}</option>
-                    <option value="base">Base</option>
+                    <option value="leaderBase">Base</option>
                     <option value="commander">The Commander</option>
                     <option value="diplomat">The Diplomat</option>
                     <option value="shepherd">The Shepherd</option>
@@ -60,8 +54,8 @@
             <div class="variant muscle">
                 <select name="attr_variant" class="variant">
                     <option value="blank">{Variant}</option>
-                    <option value="base">Base</option>
-                    <option value="ex-marine">The Ex-Marine</option>
+                    <option value="muscleBase">Base</option>
+                    <option value="exMarine">The Ex-Marine</option>
                     <option value="miner">The Miner</option>
                     <option value="security">The Security</option>
                 </select>
@@ -69,7 +63,7 @@
             <div class="variant scientist">
                 <select name="attr_variant" class="variant">
                     <option value="blank">{Variant}</option>
-                    <option value="base">Base</option>
+                    <option value="scientistBase">Base</option>
                     <option value="biologist">The Biologist</option>
                     <option value="chemist">The Chemist</option>
                     <option value="medic">The Medic</option>
@@ -78,16 +72,16 @@
             <div class="variant specialist">
                 <select name="attr_variant" class="variant">
                     <option value="blank">{Variant}</option>
-                    <option value="base">Base</option>
+                    <option value="specialistBase">Base</option>
                     <option value="academic">The Academic</option>
                     <option value="pilot">The Pilot</option>
-                    <option value="weapons-expert">The Weapons Expert</option>
+                    <option value="weaponsExpert">The Weapons Expert</option>
                 </select>
             </div>
             <div class="variant stowaway">
                 <select name="attr_variant" class="variant">
                     <option value="blank">{Variant}</option>
-                    <option value="base">Base</option>
+                    <option value="stowawayBase">Base</option>
                     <option value="criminal">The Criminal</option>
                     <option value="kid">The Kid</option>
                     <option value="survivor">The Survivor</option>
@@ -96,7 +90,7 @@
             <div class="variant technician">
                 <select name="attr_variant" class="variant">
                     <option value="blank">{Variant}</option>
-                    <option value="base">Base</option>
+                    <option value="technicianBase">Base</option>
                     <option value="engineer">The Engineer</option>
                     <option value="Hacker">The Hacker</option>
                     <option value="mechanic">The Mechanic</option>
@@ -110,7 +104,7 @@
         </div>
         <div class="space">
             <img src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/space.png"><br />
-            <div name="attr_space" class="attr-space"></div>
+            <textarea name="attr_space" class="attr-space"></textarea>
         </div>
         <div class="notes">
             <img src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/notes.png"><br />
@@ -175,10 +169,9 @@
             <input type="checkbox" name="attr_harm7" class="harm-display" />
             <span class="dying">DYING</span>
             <br /><br />
-            <p class="stress-description">Mark a stress when directed.
-                <br />Erase a mark after downtime.
-                <br />After the 5th stress mark,
-                <br />you are panicked.</p>
+            <p class="stress-description">Mark a stress when directed. Erase a
+                <br />mark after downtime. After the 5th
+                <br />stress mark, you are panicked.</p>
             <span>ALRIGHT</span>
             <button type="action" name="act_stress_1" class="stress-selector"></button>
             <button type="action" name="act_stress_2" class="stress-selector"></button>
@@ -196,6 +189,55 @@
 </div>
 
 <script type="text/worker">
+
+    let spaceInfo = {
+        augmentedBase:  "Augmented space",
+        almostHuman:    "Almost Human",
+        construct:      "Construct",
+        cyborg:         "Cyborg",
+
+        civilianBase:   "Civilian space",
+        entertainer:    "Entertainer",
+        homesteader:    "Homesteader",
+        merchant:       "Merchant",
+
+        leaderBase:     "Leader space",
+        commander:      "Commander",
+        diplomat:       "Diplomat",
+        shepherd:       "Shepherd",
+
+        muscleBase:     "Muscle space",
+        exMarine:       "Ex Marine",
+        miner:          "Miner",
+        security:       "Security",
+
+        scientistBase:  "Scientist space",
+        biologist:      "Biologist",
+        chemist:        "Chemist",
+        medic:          "Medic",
+
+        specialistBase: "Specialist space",
+        academic:       "Academic",
+        pilot:          "Pilot",
+        weaponsExpert:  "Weapons Expert",
+
+        stowawayBase:   "Stowaway space",
+        criminal:       "Criminal",
+        kid:            "Kid",
+        survivor:       "Survivor",
+
+        technicianBase: "Technician space",
+        engineer:       "Engineer",
+        hacker:         "Hacker",
+        mechanic:       "Mechanic"
+    };
+
+    on('change:variant', function() {
+        getAttrs(["variant"], function(value) {
+            setAttrs({ "Space": spaceInfo[value.variant] });
+        });
+    });
+
     const intuitionValues = ["1","2","3","4","5","6","7"];
     const harmValues = ["1","2","3","4","5","6","7"];
     const stressValues =  ["1","2","3","4","5"];
@@ -237,5 +279,4 @@
             });
         });
     };
-
 </script>
