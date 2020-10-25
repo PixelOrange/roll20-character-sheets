@@ -7,8 +7,8 @@
         <div class="attitude">
             <img src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/attitude.png"><br />
             <input type="text" name="attr_attitude" class="attitude" />
-        </div><br /><br />
-        <div class="archetype">
+        </div><br />
+        <span class="archetype">
             <select name="attr_archetype" class="archetype">
                 <option value="blank">{Archetype}</option>
                 <option value="augmented">The Augmented</option>
@@ -20,84 +20,93 @@
                 <option value="stowaway">The Stowaway</option>
                 <option value="technician">The Technician</option>
             </select>
+        </span>
 
-            <!-- Used for class switching -->
-            <input name="attr_archetype" type="hidden" class="archetype-switch" />
+        <!-- Used for class switching -->
+        <input name="attr_archetype" type="hidden" class="archetype-switch" />
 
-            <div class="variant augmented">
-                <select name="attr_variant" class="variant">
-                    <option value="blank">{Variant}</option>
-                    <option value="augmentedBase">Base</option>
-                    <option value="almostHuman">The Almost-Human</option>
-                    <option value="construct">The Construct</option>
-                    <option value="cyborg">The Cyborg</option>
-                </select>
-            </div>
-            <div class="variant civilian">
-                <select name="attr_variant" class="variant">
-                    <option value="blank">{Variant}</option>
-                    <option value="civilianBase">Base</option>
-                    <option value="entertainer">The Entertainer</option>
-                    <option value="homesteader">The Homesteader</option>
-                    <option value="merchant">The Merchant</option>
-                </select>
-            </div>
-            <div class="variant leader">
-                <select name="attr_variant" class="variant">
-                    <option value="blank">{Variant}</option>
-                    <option value="leaderBase">Base</option>
-                    <option value="commander">The Commander</option>
-                    <option value="diplomat">The Diplomat</option>
-                    <option value="shepherd">The Shepherd</option>
-                </select>
-            </div>
-            <div class="variant muscle">
-                <select name="attr_variant" class="variant">
-                    <option value="blank">{Variant}</option>
-                    <option value="muscleBase">Base</option>
-                    <option value="exMarine">The Ex-Marine</option>
-                    <option value="miner">The Miner</option>
-                    <option value="security">The Security</option>
-                </select>
-            </div>
-            <div class="variant scientist">
-                <select name="attr_variant" class="variant">
-                    <option value="blank">{Variant}</option>
-                    <option value="scientistBase">Base</option>
-                    <option value="biologist">The Biologist</option>
-                    <option value="chemist">The Chemist</option>
-                    <option value="medic">The Medic</option>
-                </select>
-            </div>
-            <div class="variant specialist">
-                <select name="attr_variant" class="variant">
-                    <option value="blank">{Variant}</option>
-                    <option value="specialistBase">Base</option>
-                    <option value="academic">The Academic</option>
-                    <option value="pilot">The Pilot</option>
-                    <option value="weaponsExpert">The Weapons Expert</option>
-                </select>
-            </div>
-            <div class="variant stowaway">
-                <select name="attr_variant" class="variant">
-                    <option value="blank">{Variant}</option>
-                    <option value="stowawayBase">Base</option>
-                    <option value="criminal">The Criminal</option>
-                    <option value="kid">The Kid</option>
-                    <option value="survivor">The Survivor</option>
-                </select>
-            </div>
-            <div class="variant technician">
-                <select name="attr_variant" class="variant">
-                    <option value="blank">{Variant}</option>
-                    <option value="technicianBase">Base</option>
-                    <option value="engineer">The Engineer</option>
-                    <option value="Hacker">The Hacker</option>
-                    <option value="mechanic">The Mechanic</option>
-                </select>
-            </div>
+        <span class="variant augmented">
+            <select name="attr_variant" class="variant">
+                <option value="blank">{Variant}</option>
+                <option value="augmentedBase">Base</option>
+                <option value="almostHuman">The Almost-Human</option>
+                <option value="construct">The Construct</option>
+                <option value="cyborg">The Cyborg</option>
+            </select>
+            <br />
+            <select name="attr_skill_points" class="skill-points">
+                <option value="blank">Skill Points</option>
+                <option value="augmented1">Head: +0 Hand: +2 Heart: +0 Group: +1 Tech: +1</option>
+                <option value="augmented2">Head: +2 Hand: +1 Heart: +0 Group: -2 Tech: +1</option>
+                <option value="augmented3">1 2 -1 0 -1</option>
+                <option value="augmented4">-1 2 -2 2 0</option>
+                <option value="augmented4">1 1 0 1 0</option>
+            </select>
+        </span>
+        <span class="variant civilian">
+            <select name="attr_variant" class="variant">
+                <option value="blank">{Variant}</option>
+                <option value="civilianBase">Base</option>
+                <option value="entertainer">The Entertainer</option>
+                <option value="homesteader">The Homesteader</option>
+                <option value="merchant">The Merchant</option>
+            </select>
+        </span>
+        <span class="variant leader">
+            <select name="attr_variant" class="variant">
+                <option value="blank">{Variant}</option>
+                <option value="leaderBase">Base</option>
+                <option value="commander">The Commander</option>
+                <option value="diplomat">The Diplomat</option>
+                <option value="shepherd">The Shepherd</option>
+            </select>
+        </span>
+        <span class="variant muscle">
+            <select name="attr_variant" class="variant">
+                <option value="blank">{Variant}</option>
+                <option value="muscleBase">Base</option>
+                <option value="exMarine">The Ex-Marine</option>
+                <option value="miner">The Miner</option>
+                <option value="security">The Security</option>
+            </select>
+        </span>
+        <span class="variant scientist">
+            <select name="attr_variant" class="variant">
+                <option value="blank">{Variant}</option>
+                <option value="scientistBase">Base</option>
+                <option value="biologist">The Biologist</option>
+                <option value="chemist">The Chemist</option>
+                <option value="medic">The Medic</option>
+            </select>
+        </span>
+        <span class="variant specialist">
+            <select name="attr_variant" class="variant">
+                <option value="blank">{Variant}</option>
+                <option value="specialistBase">Base</option>
+                <option value="academic">The Academic</option>
+                <option value="pilot">The Pilot</option>
+                <option value="weaponsExpert">The Weapons Expert</option>
+            </select>
+        </span>
+        <span class="variant stowaway">
+            <select name="attr_variant" class="variant">
+                <option value="blank">{Variant}</option>
+                <option value="stowawayBase">Base</option>
+                <option value="criminal">The Criminal</option>
+                <option value="kid">The Kid</option>
+                <option value="survivor">The Survivor</option>
+            </select>
+        </span>
+        <span class="variant technician">
+            <select name="attr_variant" class="variant">
+                <option value="blank">{Variant}</option>
+                <option value="technicianBase">Base</option>
+                <option value="engineer">The Engineer</option>
+                <option value="Hacker">The Hacker</option>
+                <option value="mechanic">The Mechanic</option>
+            </select>
+        </span>
 
-        </div>
         <div class="appearance">
             <img src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/appearance.png"><br />
             <textarea name="attr_appearance" class="attr-appearance"></textarea>
@@ -115,82 +124,85 @@
         <div class="stats">
             <img class="statblock" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/stats.png">
             <span class="head-text">Planning<br />Intelligence</span>
-            <input type="number" name="attr_head" class="head" />
+            <input type="text" name="attr_head" class="head" />
             <span class="hand-text">Strength<br />Combat</span>
-            <input type="number" name="attr_hand" class="hand" />
-            <span class="heart-text">Stability<br />Empathy</span>
-            <input type="number" name="attr_heart" class="heart" />
+            <input type="text" name="attr_hand" class="hand" />
+            <span class="heart-text">Empathy<br />Stability</span>
+            <input type="text" name="attr_heart" class="heart" />
             <span class="group-text">Negotiation<br />Networking</span>
-            <input type="number" name="attr_group" class="group" />
+            <input type="text" name="attr_group" class="group" />
             <span class="tech-text">Abilities<br />Use Items</span>
-            <input type="number" name="attr_tech" class="tech" />
+            <input type="text" name="attr_tech" class="tech" />
         </div>
         <br />
         <div class="intuition">
             <img src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/intuition.png"><br />
-            <p class="intuition-description">Remove an Intuition to change a roll
-                <br />to an Incredible Success or to avoid
-                <br />all harm in one event.</p>
-            <span>GOOD</span>
-            <button type="action" name="act_intuition_1" class="intuition-selector"></button>
-            <button type="action" name="act_intuition_2" class="intuition-selector"></button>
-            <button type="action" name="act_intuition_3" class="intuition-selector"></button>
-            <button type="action" name="act_intuition_4" class="intuition-selector"></button>
-            <button type="action" name="act_intuition_5" class="intuition-selector"></button>
-            <button type="action" name="act_intuition_6" class="intuition-selector"></button>
-            <button type="action" name="act_intuition_7" class="intuition-selector"></button>
-            <input type="checkbox" name="attr_intuition1" class="intuition-display" />
-            <input type="checkbox" name="attr_intuition2" class="intuition-display" />
-            <input type="checkbox" name="attr_intuition3" class="intuition-display" />
-            <input type="checkbox" name="attr_intuition4" class="intuition-display" />
-            <input type="checkbox" name="attr_intuition5" class="intuition-display" />
-            <input type="checkbox" name="attr_intuition6" class="intuition-display" />
-            <input type="checkbox" name="attr_intuition7" class="intuition-display" />
-            <span class="done-for">DONE FOR</span>
+            <p class="intuition-description">Remove an Intuition to change a roll to an Incredible Success
+                or to avoid all harm in one event.</p>
+            <div class="intuition-tracker">
+                <span>GOOD</span>
+                <button type="action" name="act_intuition_1" class="intuition-selector"></button>
+                <button type="action" name="act_intuition_2" class="intuition-selector"></button>
+                <button type="action" name="act_intuition_3" class="intuition-selector"></button>
+                <button type="action" name="act_intuition_4" class="intuition-selector"></button>
+                <button type="action" name="act_intuition_5" class="intuition-selector"></button>
+                <button type="action" name="act_intuition_6" class="intuition-selector"></button>
+                <button type="action" name="act_intuition_7" class="intuition-selector"></button>
+                <input type="checkbox" name="attr_intuition1" class="intuition-display" />
+                <input type="checkbox" name="attr_intuition2" class="intuition-display" />
+                <input type="checkbox" name="attr_intuition3" class="intuition-display" />
+                <input type="checkbox" name="attr_intuition4" class="intuition-display" />
+                <input type="checkbox" name="attr_intuition5" class="intuition-display" />
+                <input type="checkbox" name="attr_intuition6" class="intuition-display" />
+                <input type="checkbox" name="attr_intuition7" class="intuition-display" />
+                <span class="done-for">DONE FOR</span>
+            </div>
         </div>
         <div class="harm-stress">
             <img src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/harmstress.png"><br />
-            <p class="harm-description">Mark a harm when you’re injured.
-                <br>At 5 harm you are unstable.</p>
-            <span>HEALTHY</span>
-            <button type="action" name="act_harm_1" class="harm-selector"></button>
-            <button type="action" name="act_harm_2" class="harm-selector"></button>
-            <button type="action" name="act_harm_3" class="harm-selector"></button>
-            <button type="action" name="act_harm_4" class="harm-selector"></button>
-            <button type="action" name="act_harm_5" class="harm-selector"></button>
-            <button type="action" name="act_harm_6" class="harm-selector"></button>
-            <button type="action" name="act_harm_7" class="harm-selector"></button>
-            <input type="checkbox" name="attr_harm1" class="harm-display" />
-            <input type="checkbox" name="attr_harm2" class="harm-display" />
-            <input type="checkbox" name="attr_harm3" class="harm-display" />
-            <input type="checkbox" name="attr_harm4" class="harm-display" />
-            <input type="checkbox" name="attr_harm5" class="harm-display" />
-            <input type="checkbox" name="attr_harm6" class="harm-display" />
-            <input type="checkbox" name="attr_harm7" class="harm-display" />
-            <span class="dying">DYING</span>
+            <p class="harm-description">Mark a harm when you’re injured. At 5 harm you are unstable.</p>
+            <div class="harm-tracker">
+                <span>HEALTHY</span>
+                <button type="action" name="act_harm_1" class="harm-selector"></button>
+                <button type="action" name="act_harm_2" class="harm-selector"></button>
+                <button type="action" name="act_harm_3" class="harm-selector"></button>
+                <button type="action" name="act_harm_4" class="harm-selector"></button>
+                <button type="action" name="act_harm_5" class="harm-selector"></button>
+                <button type="action" name="act_harm_6" class="harm-selector"></button>
+                <button type="action" name="act_harm_7" class="harm-selector"></button>
+                <input type="checkbox" name="attr_harm1" class="harm-display" />
+                <input type="checkbox" name="attr_harm2" class="harm-display" />
+                <input type="checkbox" name="attr_harm3" class="harm-display" />
+                <input type="checkbox" name="attr_harm4" class="harm-display" />
+                <input type="checkbox" name="attr_harm5" class="harm-display" />
+                <input type="checkbox" name="attr_harm6" class="harm-display" />
+                <input type="checkbox" name="attr_harm7" class="harm-display" />
+                <span class="dying">DYING</span>
+            </div>
             <br /><br />
-            <p class="stress-description">Mark a stress when directed. Erase a
-                <br />mark after downtime. After the 5th
-                <br />stress mark, you are panicked.</p>
-            <span>ALRIGHT</span>
-            <button type="action" name="act_stress_1" class="stress-selector"></button>
-            <button type="action" name="act_stress_2" class="stress-selector"></button>
-            <button type="action" name="act_stress_3" class="stress-selector"></button>
-            <button type="action" name="act_stress_4" class="stress-selector"></button>
-            <button type="action" name="act_stress_5" class="stress-selector"></button>
-            <input type="checkbox" name="attr_stress1" class="stress-display" />
-            <input type="checkbox" name="attr_stress2" class="stress-display" />
-            <input type="checkbox" name="attr_stress3" class="stress-display" />
-            <input type="checkbox" name="attr_stress4" class="stress-display" />
-            <input type="checkbox" name="attr_stress5" class="stress-display" />
-            <span class="exhausted">EXHAUSTED</span>
+            <p class="stress-description">Mark a stress when directed. Erase a mark after downtime.
+                After the 5th stress mark, you are panicked.</p>
+            <div class="stress-tracker">
+                <span>ALRIGHT</span>
+                <button type="action" name="act_stress_1" class="stress-selector"></button>
+                <button type="action" name="act_stress_2" class="stress-selector"></button>
+                <button type="action" name="act_stress_3" class="stress-selector"></button>
+                <button type="action" name="act_stress_4" class="stress-selector"></button>
+                <button type="action" name="act_stress_5" class="stress-selector"></button>
+                <input type="checkbox" name="attr_stress1" class="stress-display" />
+                <input type="checkbox" name="attr_stress2" class="stress-display" />
+                <input type="checkbox" name="attr_stress3" class="stress-display" />
+                <input type="checkbox" name="attr_stress4" class="stress-display" />
+                <input type="checkbox" name="attr_stress5" class="stress-display" />
+                <span class="exhausted">EXHAUSTED</span>
+            </div>
         </div>
     </div>
 </div>
 
 <script type="text/worker">
 
-    let spaceInfo = {
+    const spaceInfo = {
         augmentedBase:  "Augmented space",
         almostHuman:    "Almost Human",
         construct:      "Construct",
@@ -232,9 +244,30 @@
         mechanic:       "Mechanic"
     };
 
+    const skillsInfo = {
+        augmented: {
+            augmented1: {
+                head: "0", hand: "+2", heart: "0", group: "+1", tech: "+1"
+            },
+            augmented2: {
+                head: "+2", hand: "+1", heart: "0", group: "-2", tech: "+1"
+            }
+        }
+    };
+
     on('change:variant', function() {
         getAttrs(["variant"], function(value) {
-            setAttrs({ "Space": spaceInfo[value.variant] });
+            setAttrs({ "space": spaceInfo[value.variant] });
+            console.log(value);
+        });
+    });
+
+    on('change:skill_points', function() {
+        getAttrs(["archetype"], function(choice) {
+            getAttrs(["skill_points"], function(value) {
+                selection = skillsInfo[choice.archetype][value.skill_points];
+                setAttrs({ "head": selection.head, "hand": selection.hand, "heart": selection.heart, "group": selection.group, "tech": selection.tech });
+            });
         });
     });
 

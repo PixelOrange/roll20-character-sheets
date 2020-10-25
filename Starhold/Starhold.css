@@ -1,7 +1,7 @@
 /* Affects Entire Sheet */
 
-span.sheet-text {
-font-family: "Lucida Console"
+span, textarea, p {
+    font-family: "Lucida Console"
 }
 
 div.sheet-flex-section {
@@ -11,71 +11,100 @@ div.sheet-flex-section {
     border: solid;
 }
 
+div.sheet-col1 {
+    white-space: nowrap;
+}
+
+input, select, textarea {
+    border: 1px solid;
+}
+
 /* Affects Left Column */
 
 div.sheet-name, div.sheet-attitude {
+    position: relative;
     display:inline-block;
     vertical-align:top;
+    margin-bottom: 10px;
 }
 
-input.sheet-character-name, input.sheet-attitude {
-    width: 170px;
-    vertical-align: baseline;
-    border: 1px solid;
+input.sheet-character-name {
+    width: 220px;
+}
+
+input.sheet-attitude {
+    width: 166px;
 }
 
 select.sheet-archetype, select.sheet-variant {
-    width: 170px;
-    border: 1px solid;
+    width: 191px;
 }
 
-div.sheet-variant {
+span.sheet-variant {
     display: none;
 }
 
-input.sheet-archetype-switch[value="augmented"] ~ div.sheet-augmented {
+select.sheet-skill-points {
+    width: 389px;
+}
+
+input.sheet-archetype-switch[value="augmented"] ~ span.sheet-augmented {
     display: inline;
 }
 
-input.sheet-archetype-switch[value="civilian"] ~ div.sheet-civilian {
+input.sheet-archetype-switch[value="civilian"] ~ span.sheet-civilian {
     display: inline;
 }
 
-input.sheet-archetype-switch[value="leader"] ~ div.sheet-leader {
+input.sheet-archetype-switch[value="leader"] ~ span.sheet-leader {
     display: inline;
 }
 
-input.sheet-archetype-switch[value="muscle"] ~ div.sheet-muscle {
+input.sheet-archetype-switch[value="muscle"] ~ span.sheet-muscle {
     display: inline;
 }
 
-input.sheet-archetype-switch[value="scientist"] ~ div.sheet-scientist {
+input.sheet-archetype-switch[value="scientist"] ~ span.sheet-scientist {
     display: inline;
 }
 
-input.sheet-archetype-switch[value="specialist"] ~ div.sheet-specialist {
+input.sheet-archetype-switch[value="specialist"] ~ span.sheet-specialist {
     display: inline;
 }
 
-input.sheet-archetype-switch[value="stowaway"] ~ div.sheet-stowaway {
+input.sheet-archetype-switch[value="stowaway"] ~ span.sheet-stowaway {
     display: inline;
 }
 
-input.sheet-archetype-switch[value="technician"] ~ div.sheet-technician {
+input.sheet-archetype-switch[value="technician"] ~ span.sheet-technician {
     display: inline;
+}
+
+div.sheet-appearance, div.sheet-space, div.sheet-notes {
+    position: absolute;
+}
+
+div.sheet-appearance {
+    top: 200px;
+}
+
+div.sheet-space {
+    top: 390px;
+}
+
+div.sheet-notes {
+    top: 575px;
 }
 
 textarea.sheet-attr-appearance, textarea.sheet-attr-space, textarea.sheet-attr-notes {
-    border: 1px solid;
     background: white;
-    width: 373px;
+    width: 379px;
 }
 
 /* Affects Right Column */
 
 div.sheet-col2 {
-    position: relative;
-    left: 10px;
+    margin-left: 10px;
 }
 
 div.sheet-stats {
@@ -83,18 +112,9 @@ div.sheet-stats {
     top: 5px;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-input[type=number] {
-    -moz-appearance:textfield; /* Firefox */
-}
-
 input.sheet-head, input.sheet-hand, input.sheet-heart, input.sheet-group, input.sheet-tech {
     position: absolute;
+    width: 70px;
     font-size: 20px;
     text-align: center;
 }
@@ -137,27 +157,27 @@ span.sheet-head-text, span.sheet-heart-text, span.sheet-tech-text {
 }
 
 span.sheet-hand-text, span.sheet-group-text {
-    top: 5px;
+    top: -2px;
 }
 
 span.sheet-head-text {
     color: blue;
-    left: 25px;
+    left: 5px;
 }
 
 span.sheet-hand-text {
     color: green;
-    left: 115px;
+    left: 110px;
 }
 
 span.sheet-heart-text {
     color: red;
-    left: 200px;
+    left: 190px;
 }
 
 span.sheet-group-text {
     color: purple;
-    left: 277px;
+    left: 266px;
 }
 
 span.sheet-tech-text {
@@ -166,17 +186,20 @@ span.sheet-tech-text {
 }
 
 div.sheet-intuition, div.sheet-harm-stress {
+    position: relative;
     padding: 3px;
     border: 1px solid;
-    width: 230px;
+    width: 215px;
     margin-top: 5px;
+}
+
+div.sheet-intuition-tracker, div.sheet-harm-tracker, div.sheet-stress-tracker {
     white-space: nowrap;
 }
 
 input.sheet-intuition-selector, input.sheet-intuition-display, input.sheet-harm-selector, input.sheet-harm-display, input.sheet-stress-selector, input.sheet-stress-display {
     position: relative;
     vertical-align: text-top;
-    flex-wrap: nowrap;
 }
 
 button.sheet-intuition-selector, button.sheet-harm-selector, button.sheet-stress-selector {
@@ -197,7 +220,7 @@ input.sheet-intuition-display, input.sheet-harm-display, span.sheet-dying, span.
 input.sheet-stress-display, span.sheet-exhausted {
     position: relative;
     margin: 0px;
-    left: -83.5px;
+    left: -83px;
 }
 
 input.sheet-intuition-display, input.sheet-harm-display, input.sheet-stress-display {
