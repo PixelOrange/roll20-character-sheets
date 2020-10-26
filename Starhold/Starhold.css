@@ -113,7 +113,7 @@ div.sheet-stats {
     top: 5px;
 }
 
-input.sheet-head, input.sheet-hand, input.sheet-heart, input.sheet-group, input.sheet-tech {
+input.sheet-stats {
     position: absolute;
     width: 70px;
     font-size: 20px;
@@ -148,7 +148,7 @@ input.sheet-tech {
     left: 360px;
 }
 
-span.sheet-head-text, span.sheet-hand-text, span.sheet-heart-text, span.sheet-group-text, span.sheet-tech-text {
+span.sheet-stats-text {
     position: absolute;
     text-align: center;
 }
@@ -200,12 +200,7 @@ div.sheet-intuition-tracker, div.sheet-harm-tracker, div.sheet-stress-tracker {
     white-space: nowrap;
 }
 
-input.sheet-intuition-selector, input.sheet-intuition-display, input.sheet-harm-selector, input.sheet-harm-display, input.sheet-stress-selector, input.sheet-stress-display {
-    position: relative;
-    vertical-align: text-top;
-}
-
-button.sheet-intuition-selector, button.sheet-harm-selector, button.sheet-stress-selector {
+button.sheet-status-tracker {
     position: relative;
     vertical-align: text-top;
     margin: 0px;
@@ -214,19 +209,22 @@ button.sheet-intuition-selector, button.sheet-harm-selector, button.sheet-stress
     opacity: 0;
 }
 
-input.sheet-intuition-display, input.sheet-harm-display, span.sheet-dying, span.sheet-done-for {
+span.sheet-tracker-end-text {
     position: relative;
     margin: 0px;
+}
+
+input.sheet-intuition-display, input.sheet-harm-display, span.sheet-dying, span.sheet-done-for {
     left: -116.4px;
 }
 
 input.sheet-stress-display, span.sheet-exhausted {
-    position: relative;
-    margin: 0px;
     left: -83px;
 }
 
 input.sheet-intuition-display, input.sheet-harm-display, input.sheet-stress-display {
+    position: relative;
+    vertical-align: text-top;
     -webkit-appearance: none;
     -moz-appearance: none;
     -o-appearance: none;
@@ -234,7 +232,7 @@ input.sheet-intuition-display, input.sheet-harm-display, input.sheet-stress-disp
     padding: 5.5px;
     height: 3px;
     width: 3px;
-    margin: 0;
+    margin: 0px;
     border: 1px solid;
     outline: none;
     cursor: pointer;
@@ -264,7 +262,7 @@ div.sheet-moves {
     width: 439px;
 }
 
-div.sheet-augmented-moveset, div.sheet-civilian-moveset {
+div.sheet-moveset {
     display: none;
 }
 
@@ -273,6 +271,30 @@ input.sheet-moveset-switch[value="augmentedBase"] ~ div.sheet-augmented-moveset 
 }
 
 input.sheet-moveset-switch[value="civilianBase"] ~ div.sheet-civilian-moveset {
+    display: inline;
+}
+
+input.sheet-moveset-switch[value="leaderBase"] ~ div.sheet-leader-moveset {
+    display: inline;
+}
+
+input.sheet-moveset-switch[value="muscleBase"] ~ div.sheet-muscle-moveset {
+    display: inline;
+}
+
+input.sheet-moveset-switch[value="leaderBase"] ~ div.sheet-scientist-moveset {
+    display: inline;
+}
+
+input.sheet-moveset-switch[value="specialistBase"] ~ div.sheet-specialist-moveset {
+    display: inline;
+}
+
+input.sheet-moveset-switch[value="stowawayBase"] ~ div.sheet-stowaway-moveset {
+    display: inline;
+}
+
+input.sheet-moveset-switch[value="technicianBase"] ~ div.sheet-technician-moveset {
     display: inline;
 }
 
