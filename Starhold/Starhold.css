@@ -15,7 +15,6 @@ div.sheet-col1 {
     min-width: 400px;
     left: 1px;
     white-space: nowrap;
-    border: solid;
 }
 
 div.sheet-name, div.sheet-attitude {
@@ -23,6 +22,11 @@ div.sheet-name, div.sheet-attitude {
     display:inline-block;
     vertical-align:top;
     margin-bottom: 10px;
+}
+
+img.sheet-name, img.sheet-attitude {
+    position: relative;
+    left: 3px;
 }
 
 input.sheet-character-name {
@@ -86,6 +90,11 @@ div.sheet-appearance, div.sheet-space, div.sheet-notes {
     position: relative;
 }
 
+img.sheet-appearance, img.sheet-space, div.sheet-notes {
+    position: relative;
+    left: 3px;
+}
+
 textarea.sheet-attr-appearance, textarea.sheet-attr-space, textarea.sheet-attr-notes {
     background: white;
     width: 381px;
@@ -97,7 +106,6 @@ div.sheet-col2 {
     position: absolute;
     min-width: 460px;
     left: 410px;
-    border: solid;
 }
 
 div.sheet-stats {
@@ -237,7 +245,37 @@ input.sheet-intuition-display:checked, input.sheet-harm-display:checked, input.s
     background-color: red;
 }
 
-div.sheet-moves {
+div.sheet-scars {
+    position: absolute;
+    top: 310px;
+}
+
+img.sheet-scars {
     position: relative;
-    top: -120px;
+    left: 3px;
+}
+
+textarea.sheet-attr-scars {
+    width: 212px;
+    height: 87px;
+}
+
+div.sheet-moves {
+    width: 439px;
+}
+
+div.sheet-augmented-moveset, div.sheet-civilian-moveset {
+    display: none;
+}
+
+input.sheet-moveset-switch[value="augmentedBase"] ~ div.sheet-augmented-moveset {
+    display: inline;
+}
+
+input.sheet-moveset-switch[value="civilianBase"] ~ div.sheet-civilian-moveset {
+    display: inline;
+}
+
+input.sheet-move:not(:checked) + span {
+    color: grey;
 }

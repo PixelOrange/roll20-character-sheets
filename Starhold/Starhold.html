@@ -1,10 +1,10 @@
 <div class="col1">
     <div class="name">
-        <img src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/name.png"><br />
+        <img class="name" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/name.png"><br />
         <input type="text" name="attr_character" class="character-name" />
     </div>
     <div class="attitude">
-        <img src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/attitude.png"><br />
+        <img class="attitude" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/attitude.png"><br />
         <input type="text" name="attr_attitude" class="attitude" />
     </div><br />
     <div class="class-select">
@@ -23,7 +23,7 @@
         </span>
 
         <!-- Used for class switching -->
-        <input name="attr_archetype" type="hidden" class="archetype-switch" />
+        <input type="hidden" name="attr_archetype" class="archetype-switch" />
 
         <span class="variant augmented">
             <select name="attr_variant" class="variant">
@@ -171,15 +171,15 @@
         </span>
     </div>
     <div class="appearance">
-        <img src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/appearance.png"><br />
+        <img class="space" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/appearance.png"><br />
         <textarea name="attr_appearance" class="attr-appearance"></textarea>
     </div>
     <div class="space">
-        <img src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/space.png"><br />
+        <img class="space"src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/space.png"><br />
         <textarea name="attr_space" class="attr-space"></textarea>
     </div>
     <div class="notes">
-        <img src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/notes.png"><br />
+        <img class="space" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/notes.png"><br />
         <textarea name="attr_notes" class="attr-notes"></textarea>
     </div>
 </div>
@@ -260,8 +260,29 @@
             <span class="exhausted">EXHAUSTED</span>
         </div>
     </div>
+    <div class="scars">
+        <img class="scars" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/scars.png"><br />
+        <textarea name="attr_scars" class="attr-scars"></textarea>
+    </div>
     <div class="moves">
-            test
+        <img class="moves" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/moves.png"><br />
+        <input type="hidden" name="attr_variant" class="moveset-switch" />
+        <div class="augmented-moveset">
+            <input type="hidden" name="attr_move_limit" class="move-limit" />
+            <span class="move-default">Pick two:</span><br />
+            <input type="checkbox" name="attr_move1" class="move move1" />
+            <span class="move"><b>With Your Special Eyes:</b> They definitely had your brand when you upgraded your visual input. With your augmented eyes, you can see in near total darkness, and get a +1 when surveying a scene in bad lighting.</span>
+            <br /><br />
+            <input type="checkbox" name="attr_move2" class="move move2" />
+            <span class="move"><b>Volume Control:</b> People talk, and you listen. You can control your hearing to hear very quiet sounds or to filter out very loud ones within 100 feet.</span>
+            <br /><br />
+            <input type="checkbox" name="attr_move3" class="move move3" />
+            <span class="move"><b>Zoom Zoom:</b> You paid for the latest light-weight skeletal upgrades because you just gotta go fast. You can move very quickly and get a +1 to Act Under Fire when dodging enemy attacks.</span>
+            <br /><br />
+            <input type="checkbox" name="attr_move4" class="move move4" />
+            <span class="move"><b>Fursona:</b> The latest augmentation techniques enhance your skin to withstand dangerous temperatures. If you pick <b>fur</b>, you are impervious to cold down to -30°F. If you pick <b>scales</b>, you are impervious to heat up to 120°F. Facial reconstruction to match augment choice included.</span>
+        </div>
+
     </div>
 </div>
 
@@ -285,8 +306,8 @@
 
         muscleBase:     "TRAINING AREA - A place to work out in, to move, to strengthen, to fight.",
 
-        scientistBase:  "LAB\r\nA place to investigate from, to hypothesize, to test, to experiment.",
-        medic:          "INFIRMARY\r\nA place to help from, to heal from, to look after, to administer, to diagnose, to medicate, to triage.",
+        scientistBase:  "LAB - A place to investigate from, to hypothesize, to test, to experiment.",
+        medic:          "INFIRMARY - A place to help from, to heal from, to look after, to administer, to diagnose, to medicate, to triage.",
 
         specialistBase: "RESEARCH ROOM - A place to solve from, to learn, to grow, to assist.",
         pilot:          "HANGER - A place to fly from, to attack from, to flee to, to protect, to escape, to dream.",
@@ -383,52 +404,55 @@ Minifridge: +1 to +group when trying to Influence Someone in your workroom"
         }
     };
 
-    on('change:variant', function() {
-        getAttrs(["variant"], function(value) {
-            if (typeof spaceInfo[value.variant] != "undefined") {
-                console.log("Defined");
-                setAttrs({ "space": spaceInfo[value.variant] });
-            } else {
-                getAttrs(["archetype"], function(value) {
-                    console.log("Undefined");
-                    var defaultValue = value.archetype + "Base";
-                    setAttrs({ "space": spaceInfo[defaultValue] });
-                });
+    on('change:variant', function(eventInfo) {
+        // console.log(eventInfo);
+        if (typeof spaceInfo[eventInfo.newValue] != "undefined") {
+            setAttrs({ "space": spaceInfo[eventInfo.newValue] });
+        } else {
+            getAttrs(["archetype"], function(value) {
+                // console.log(value);
+                var defaultValue = value.archetype + "Base";
+                setAttrs({ "space": spaceInfo[defaultValue] });
+            });
+        };
+    });
+
+    on('change:skill_points', function(eventInfo) {
+        // console.log(eventInfo);
+        getAttrs(["archetype"], function(choice) {
+            // console.log(choice);
+            if(eventInfo.newValue != "blank") {
+                selection = skillsInfo[choice.archetype][eventInfo.newValue];
+                setAttrs({ "head": selection.head, "hand": selection.hand, "heart": selection.heart, "group": selection.group, "tech": selection.tech });
             };
         });
     });
 
-    on('change:skill_points', function() {
-        getAttrs(["archetype"], function(choice) {
-            getAttrs(["skill_points"], function(value) {
-                if(value.skill_points != "blank") {
-                    selection = skillsInfo[choice.archetype][value.skill_points];
-                    setAttrs({ "head": selection.head, "hand": selection.hand, "heart": selection.heart, "group": selection.group, "tech": selection.tech });
-                };
-            });
-        });
-    });
-
     intuitionValues.forEach(function(value) {
+        // console.log(value);
         on(`clicked:intuition_${value}`, function() {
             updateAttributes("intuition", value, intuitionValues);
         });
     });
 
     harmValues.forEach(function(value) {
+        // console.log(value);
         on(`clicked:harm_${value}`, function() {
             updateAttributes("harm", value, harmValues);
         });
     });
 
     stressValues.forEach(function(value) {
+        // console.log(value);
         on(`clicked:stress_${value}`, function() {
             updateAttributes("stress", value, stressValues);
         });
     });
 
     function updateAttributes(key, value, range) {
+        // console.log("Key: " + key + " Value: " + " Range: " + range);
         getAttrs([key], function(level) {
+            // console.log(level);
             if (level[key] == 1) {
                 if (value == 1) {
                     value = 0;
@@ -436,6 +460,7 @@ Minifridge: +1 to +group when trying to Influence Someone in your workroom"
             };
             setAttrs({ [key]: value });
             range.forEach(function(count) {
+                // console.log(count);
                 if (value >= count) {
                     let selector = key + count;
                     setAttrs({ [selector]: "on" });
@@ -446,4 +471,31 @@ Minifridge: +1 to +group when trying to Influence Someone in your workroom"
             });
         });
     };
+
+    on('change:move1 change:move2 change:move3 change:move4', function(eventInfo) {
+        // console.log(eventInfo);
+        if (eventInfo.sourceType == "player") {
+            if (eventInfo.newValue == "on") {
+                getAttrs(["move_limit"], function(limit) {
+                    if (limit.move_limit == 2) {
+                        setAttrs({ [eventInfo.sourceAttribute]: "0" });
+                    } else if (limit.move_limit != "") {
+                        if (limit.move_limit < 2) {
+                            setAttrs({ move_limit: limit.move_limit + 1 });
+                        };
+                    } else {
+                        setAttrs({ move_limit: 1 });
+                    };
+                });
+            } else if (eventInfo.newValue == "0") {
+                getAttrs(["move_limit"], function(limit) {
+                    // console.log(limit);
+                    if (limit.move_limit > 0) {
+                        setAttrs({ move_limit: limit.move_limit - 1 });
+                    };
+                });
+            };
+        };
+    });
+
 </script>
