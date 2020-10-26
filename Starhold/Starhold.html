@@ -269,7 +269,7 @@
         <input type="hidden" name="attr_variant" class="moveset-switch" />
         <div class="moveset augmented-moveset">
             <input type="hidden" name="attr_move_limit" class="move-limit" />
-            <span class="move-default"><i>Pick two:</i></span><br />
+            <span class="pick-move-text"><i>Pick two:</i></span><br />
             <input type="checkbox" name="attr_move1" class="move move1" />
             <span class="move"><b>With Your Special Eyes:</b> They definitely had your brand when you upgraded your visual input. With your augmented eyes, you can <i>see in near total darkness</i>, and get a +1 when <i>surveying a scene</i> in bad lighting.</span>
             <br /><br />
@@ -282,9 +282,24 @@
             <input type="checkbox" name="attr_move4" class="move move4" />
             <span class="move"><b>Fursona:</b> The latest augmentation techniques enhance your skin to withstand dangerous temperatures. If you pick <b>fur</b>, you are <i>impervious to cold down to -30°F</i>. If you pick <b>scales</b>, you are <i>impervious to heat up to 120°F</i>. Facial reconstruction to match augment choice included.</span>
         </div>
+        <div class="moveset almost-human-moveset">
+            <span class="move"><b>Looking for Me?:</b> Sometimes the best way to get by is to blend in, and you have the uncanny ability to do it at will. Whenever <i>you need to hide in plain sight</i>, roll +tech. On a 10+, you disappear to all senses and sensors until you move. On a 7-9, you're mostly hidden. On a miss, you <i>think</i> you're hidden, but you're not.</span>
+            <br /><br />
+            <span class="move"><b>Mind Trick:</b> You can't explain it, but sometimes you can sense what people are thinking. Roll +head instead of +heart whenever you <i>try to Get a Feeling</i> from someone.</span>
+        </div>
+        <div class="moveset construct-moveset">
+            <span class="move"><b>Live Long and Kick Ass:</b> You were made to survive. You take <i>+2 base armor</i> from the materials your body is constructed with, and <i>anyone meleeing you takes 1-harm</i>. This does not stack with other armor.</span>
+            <br /><br />
+            <span class="move"><b>Unnatural:</b> Humans can heal on their own, but you’ve got nanites for that. You are <i>impervious to disease</i>, and <i>once per crisis you can instantly heal yourself for up to 3-harm</i>.</span>
+        </div>
+        <div class="moveset cyborg-moveset">
+            <span class="move"><b>Two by Two:</b> What’s better than two hands? Four hands! Melding the human body with machine, you gave yourself an extra pair of arms to help in your daily tasks. You have <i>+1 extra gear (non-armor) and cannot be restrained.</i></span>
+            <br /><br />
+            <span class="move"><b>Resistance is Futile:</b> You’re the one everyone calls on moving day. Your machine-like strength is due to, well, machine-like muscles. You are <i>able to lift and move objects up to 500lbs</i>. You can do 2-harm when <i>meleeing someone barehanded</i>.</span>
+        </div>
         <div class="moveset civilian-moveset">
             <input type="hidden" name="attr_move_limit" class="move-limit" />
-            <span class="move-default"><i>Pick two:</i></span><br />
+            <span class="pick-move-text"><i>Pick two:</i></span><br />
             <input type="checkbox" name="attr_move1" class="move move1" />
             <span class="move"><b>Bigger on the Inside:</b> The universe is constantly surprising you, and that's what you love about it. When you <i>find yourself in a new or surprising place</i>, roll +heart. On a 10+, the Speaker will tell you two important facts about it. On a 7-9, they tell you one.</span>
             <br /><br />
@@ -297,9 +312,24 @@
             <input type="checkbox" name="attr_move4" class="move move4" />
             <span class="move"><b>Back Off!:</b> You might not be much of a fighter, but you do what you need to to protect your friends. Roll +group instead of +hand when <i>Inflicting Harm after a nearby companion becomes unstable.</i></span>
         </div>
+        <div class="moveset entertainer-moveset">
+            <span class="move"><b>Killing Them Softly:</b> You usually try to talk yourself out of a bad situation, but sometimes it doesn't work. Roll +heart instead of +hand when trying to <i>Inflict Harm on someone that you failed to Influence.</i></span>
+            <br /><br />
+            <span class="move"><b>Oh, I'm Good:</b> It's always a confidence boost to see your hard work pay off. Take a +1 forward on your next +group roll when you <i>successfully Influence Someone.</i></span>
+        </div>
+        <div class="moveset homesteader-moveset">
+            <span class="move"><b>Resilience:</b> You're a long way from home, but you've got ways to make things work. When you <i>fail a roll affected by resource scarcity</i>, you can roll +group. On a 10+, you find a way to avoid complete disaster. On a 7-9 things aren't as bad as they initially appeared. On a miss, take a stress.</span>
+            <br /><br />
+            <span class="move"><b>Country Comfort:</b> Life is harsh, and you've learned to cope. <i>When you are exhausted</i>, roll +heart. On a 10+ you avoid exhaustion and reduce your stress by one. On a 7-9 you put off exhaustion for a little while, but it makes things worse when it happens. On a miss, you're exhausted twice as long.</span>
+        </div>
+        <div class="moveset merchant-moveset">
+            <span class="move"><b>Waddaya Buyin'?:</b> People have needs, and you have the answer. If <i>somebody needs something unusual</i>, roll +group. On a 10+ you have what they need in stock and can sell it at a reasonable price. On a 7-9, you don't have it but you know where to get it, and it's going to be costly.</span>
+            <br /><br />
+            <span class="move"><b>Underground Market:</b> Money's not the only thing you trade in. When you are in <i>desperate need of information or an item</i>, roll +group. On a 10+ you call in a favor to find what you need immediately. On a 7-9, you'll find it but you'll owe someone big time. On a miss, you've called in one-too-many favors and your contact is pissed about it.</span>
+        </div>
         <div class="moveset leader-moveset">
             <input type="hidden" name="attr_move_limit" class="move-limit" />
-            <span class="move-default"><i>Pick two:</i></span><br />
+            <span class="pick-move-text"><i>Pick two:</i></span><br />
             <input type="checkbox" name="attr_move1" class="move move1" />
             <span class="move"><b>Respected:</b> When you <i>try to gain someone's</i> trust, roll +group to have someone vouch for you. On a 10+ the target believes you unconditionally. On a miss, they refuse to work with you.</span>
             <br /><br />
@@ -314,7 +344,7 @@
         </div>
         <div class="moveset muscle-moveset">
             <input type="hidden" name="attr_move_limit" class="move-limit" />
-            <span class="move-default"><i>Pick two:</i></span><br />
+            <span class="pick-move-text"><i>Pick two:</i></span><br />
             <input type="checkbox" name="attr_move1" class="move move1" />
             <span class="move"><b>The Ol' One Two:</b> You've been around the block once or twice, or maybe you just lifted it. Either way, whenever <i>you do 3+ harm to something in one hit</i>, you can follow up with a bonus attack. Do an additional 1-harm if they're within melee range.</span>
             <br /><br />
@@ -509,12 +539,12 @@ Minifridge: +1 to +group when trying to Influence Someone in your workroom"
     };
 
     on('change:variant', function(eventInfo) {
-        // console.log(eventInfo);
+        console.log(eventInfo);
         if (typeof spaceInfo[eventInfo.newValue] != "undefined") {
             setAttrs({ "space": spaceInfo[eventInfo.newValue] });
         } else {
             getAttrs(["archetype"], function(value) {
-                // console.log(value);
+                console.log(value);
                 var defaultValue = value.archetype + "Base";
                 setAttrs({ "space": spaceInfo[defaultValue] });
             });

@@ -270,7 +270,31 @@ input.sheet-moveset-switch[value="augmentedBase"] ~ div.sheet-augmented-moveset 
     display: inline;
 }
 
+input.sheet-moveset-switch[value="almostHuman"] ~ div.sheet-almost-human-moveset {
+    display: inline;
+}
+
+input.sheet-moveset-switch[value="construct"] ~ div.sheet-construct-moveset {
+    display: inline;
+}
+
+input.sheet-moveset-switch[value="cyborg"] ~ div.sheet-cyborg-moveset {
+    display: inline;
+}
+
 input.sheet-moveset-switch[value="civilianBase"] ~ div.sheet-civilian-moveset {
+    display: inline;
+}
+
+input.sheet-moveset-switch[value="entertainer"] ~ div.sheet-entertainer-moveset {
+    display: inline;
+}
+
+input.sheet-moveset-switch[value="homesteader"] ~ div.sheet-homesteader-moveset {
+    display: inline;
+}
+
+input.sheet-moveset-switch[value="merchant"] ~ div.sheet-merchant-moveset {
     display: inline;
 }
 
