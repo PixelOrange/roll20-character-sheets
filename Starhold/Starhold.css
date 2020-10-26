@@ -266,6 +266,7 @@ div.sheet-moveset {
     display: none;
 }
 
+/* Augment and Variant Moves */
 input.sheet-moveset-switch[value="augmentedBase"] ~ div.sheet-augmented-moveset {
     display: inline;
 }
@@ -282,6 +283,7 @@ input.sheet-moveset-switch[value="cyborg"] ~ div.sheet-cyborg-moveset {
     display: inline;
 }
 
+/* Civilian and Variant Moves */
 input.sheet-moveset-switch[value="civilianBase"] ~ div.sheet-civilian-moveset {
     display: inline;
 }
@@ -298,27 +300,105 @@ input.sheet-moveset-switch[value="merchant"] ~ div.sheet-merchant-moveset {
     display: inline;
 }
 
+/* Leader and Variant Moves */
 input.sheet-moveset-switch[value="leaderBase"] ~ div.sheet-leader-moveset {
     display: inline;
 }
 
+input.sheet-moveset-switch[value="commander"] ~ div.sheet-commander-moveset {
+    display: inline;
+}
+
+input.sheet-moveset-switch[value="diplomat"] ~ div.sheet-diplomat-moveset {
+    display: inline;
+}
+
+input.sheet-moveset-switch[value="shepherd"] ~ div.sheet-shepherd-moveset {
+    display: inline;
+}
+
+/* Muscle and Variant Moves */
 input.sheet-moveset-switch[value="muscleBase"] ~ div.sheet-muscle-moveset {
     display: inline;
 }
 
-input.sheet-moveset-switch[value="leaderBase"] ~ div.sheet-scientist-moveset {
+input.sheet-moveset-switch[value="exMarine"] ~ div.sheet-ex-marine-moveset {
     display: inline;
 }
 
+input.sheet-moveset-switch[value="miner"] ~ div.sheet-miner-moveset {
+    display: inline;
+}
+
+input.sheet-moveset-switch[value="security"] ~ div.sheet-security-moveset {
+    display: inline;
+}
+
+/* Scientist and Variant Moves */
+input.sheet-moveset-switch[value="scientistBase"] ~ div.sheet-scientist-moveset {
+    display: inline;
+}
+
+input.sheet-moveset-switch[value="biologist"] ~ div.sheet-biologist-moveset {
+    display: inline;
+}
+
+input.sheet-moveset-switch[value="chemist"] ~ div.sheet-chemist-moveset {
+    display: inline;
+}
+
+input.sheet-moveset-switch[value="medic"] ~ div.sheet-medic-moveset {
+    display: inline;
+}
+
+/* Specialist and Variant Moves */
 input.sheet-moveset-switch[value="specialistBase"] ~ div.sheet-specialist-moveset {
     display: inline;
 }
 
+input.sheet-moveset-switch[value="academic"] ~ div.sheet-academic-moveset {
+    display: inline;
+}
+
+input.sheet-moveset-switch[value="pilot"] ~ div.sheet-pilot-moveset {
+    display: inline;
+}
+
+input.sheet-moveset-switch[value="weaponsExpert"] ~ div.sheet-weapons-expert-moveset {
+    display: inline;
+}
+
+/* Stowaway and Variant Moves */
 input.sheet-moveset-switch[value="stowawayBase"] ~ div.sheet-stowaway-moveset {
     display: inline;
 }
 
+input.sheet-moveset-switch[value="criminal"] ~ div.sheet-criminal-moveset {
+    display: inline;
+}
+
+input.sheet-moveset-switch[value="kid"] ~ div.sheet-kid-moveset {
+    display: inline;
+}
+
+input.sheet-moveset-switch[value="survivor"] ~ div.sheet-survivor-moveset {
+    display: inline;
+}
+
+/* Technician and Variant Moves */
 input.sheet-moveset-switch[value="technicianBase"] ~ div.sheet-technician-moveset {
+    display: inline;
+}
+
+input.sheet-moveset-switch[value="engineer"] ~ div.sheet-engineer-moveset {
+    display: inline;
+}
+
+input.sheet-moveset-switch[value="hacker"] ~ div.sheet-hacker-moveset {
+    display: inline;
+}
+
+input.sheet-moveset-switch[value="mechanic"] ~ div.sheet-mechanic-moveset {
     display: inline;
 }
 
