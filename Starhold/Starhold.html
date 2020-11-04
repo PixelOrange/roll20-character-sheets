@@ -242,7 +242,7 @@
             <input type="checkbox" name="attr_harm7" class="status-tracker harm-display" />
             <span class="tracker-end-text dying">DYING</span>
         </div>
-        <br /><br />
+        <br />
         <p class="stress-description">Mark a stress when directed. Erase a mark after downtime.
             After the 5th stress mark, you are panicked.</p>
         <div class="stress-tracker">
@@ -263,10 +263,27 @@
     <div class="scars">
         <img class="scars" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/scars.png"><br />
         <textarea name="attr_scars" class="attr-scars"></textarea>
-    </div>
+    </div><br />
     <div class="moves">
         <img class="moves" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/moves.png"><br />
         <input type="hidden" name="attr_variant" class="moveset-switch" />
+        <div class="xp">
+            <img class="xp" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/xp.png">
+            <div class="xp xp-buttons">
+                <button type="action" name="act_xp_1" class="xp-tracker"></button>
+                <button type="action" name="act_xp_2" class="xp-tracker"></button>
+                <button type="action" name="act_xp_3" class="xp-tracker"></button>
+                <button type="action" name="act_xp_4" class="xp-tracker"></button>
+                <button type="action" name="act_xp_5" class="xp-tracker"></button>
+            </div>
+            <div class="xp xp-display">
+                <input type="checkbox" name="attr_xp1" class="xp-tracker xp-display" />
+                <input type="checkbox" name="attr_xp2" class="xp-tracker xp-display" />
+                <input type="checkbox" name="attr_xp3" class="xp-tracker xp-display" />
+                <input type="checkbox" name="attr_xp4" class="xp-tracker xp-display" />
+                <input type="checkbox" name="attr_xp5" class="xp-tracker xp-display" />
+            </div>
+        </div>
         <div class="moveset augmented-moveset">
             <input type="hidden" name="attr_move_limit" class="move-limit" />
             <span class="pick-move-text"><i>Pick two:</i></span><br />

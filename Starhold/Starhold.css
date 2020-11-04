@@ -255,7 +255,7 @@ img.sheet-scars {
 
 textarea.sheet-attr-scars {
     width: 212px;
-    height: 87px;
+    height: 69px;
 }
 
 div.sheet-moves {
@@ -264,6 +264,11 @@ div.sheet-moves {
 
 div.sheet-moveset {
     display: none;
+}
+
+div.sheet-xp {
+    position: absolute;
+    right: 5px;
 }
 
 /* Augment and Variant Moves */
