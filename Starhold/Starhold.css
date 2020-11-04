@@ -90,10 +90,7 @@ div.sheet-appearance, div.sheet-space, div.sheet-notes {
     position: relative;
 }
 
-img.sheet-appearance, img.sheet-space, div.sheet-notes {
-    position: relative;
-    left: 3px;
-}
+
 
 textarea.sheet-attr-appearance, textarea.sheet-attr-space, textarea.sheet-attr-notes {
     background: white;
@@ -268,7 +265,28 @@ div.sheet-moveset {
 
 div.sheet-xp {
     position: absolute;
-    right: 5px;
+    right: 2px;
+    top: 3px;
+    width: 110px;
+}
+
+div.sheet-xp-display {
+    position: absolute;
+    right: 1px;
+    top: 0px;
+}
+
+div.sheet-xp-buttons {
+    position: absolute;
+    right: 1px;
+    top: -3px;
+    z-index: 1;
+    opacity: 0;
+}
+
+button.sheet-xp-tracker {
+    margin: 0px;
+    padding: 4.5px;
 }
 
 /* Augment and Variant Moves */

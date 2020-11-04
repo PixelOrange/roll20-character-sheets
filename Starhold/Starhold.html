@@ -171,15 +171,15 @@
         </span>
     </div>
     <div class="appearance">
-        <img class="space" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/appearance.png"><br />
+        <img class="appearance" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/appearance.png"><br />
         <textarea name="attr_appearance" class="attr-appearance"></textarea>
     </div>
     <div class="space">
-        <img class="space"src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/space.png"><br />
+        <img class="space" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/space.png"><br />
         <textarea name="attr_space" class="attr-space"></textarea>
     </div>
     <div class="notes">
-        <img class="space" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/notes.png"><br />
+        <img class="notes" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/notes.png"><br />
         <textarea name="attr_notes" class="attr-notes"></textarea>
     </div>
 </div>
@@ -269,14 +269,14 @@
         <input type="hidden" name="attr_variant" class="moveset-switch" />
         <div class="xp">
             <img class="xp" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/xp.png">
-            <div class="xp xp-buttons">
+            <div class="xp-buttons">
                 <button type="action" name="act_xp_1" class="xp-tracker"></button>
                 <button type="action" name="act_xp_2" class="xp-tracker"></button>
                 <button type="action" name="act_xp_3" class="xp-tracker"></button>
                 <button type="action" name="act_xp_4" class="xp-tracker"></button>
                 <button type="action" name="act_xp_5" class="xp-tracker"></button>
             </div>
-            <div class="xp xp-display">
+            <div class="xp-display">
                 <input type="checkbox" name="attr_xp1" class="xp-tracker xp-display" />
                 <input type="checkbox" name="attr_xp2" class="xp-tracker xp-display" />
                 <input type="checkbox" name="attr_xp3" class="xp-tracker xp-display" />
@@ -533,6 +533,7 @@
     const intuitionValues = ["1","2","3","4","5","6","7"];
     const harmValues = ["1","2","3","4","5","6","7"];
     const stressValues =  ["1","2","3","4","5"];
+    const xpValues = ["1","2","3","4","5"];
 
     // Descriptions for the space field
     const spaceInfo = {
@@ -687,6 +688,13 @@ Minifridge: +1 to +group when trying to Influence Someone in your workroom"
         // console.log(value);
         on(`clicked:stress_${value}`, function() {
             updateAttributes("stress", value, stressValues);
+        });
+    });
+
+    xpValues.forEach(function(value) {
+        // console.log(value);
+        on(`clicked:xp_${value}`, function() {
+            updateAttributes("xp", value, xpValues);
         });
     });
 
