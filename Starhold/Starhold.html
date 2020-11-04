@@ -283,7 +283,19 @@
                 <input type="checkbox" name="attr_xp4" class="xp-tracker xp-display" />
                 <input type="checkbox" name="attr_xp5" class="xp-tracker xp-display" />
             </div>
+            <div class="level">
+                <img class="level" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/level.png"><br />
+                <span class="level" name="attr_level"></span>
+            </div>
         </div>
+        <div class="moveset">
+            <button class="move-title" type="roll" value="/roll 1d20+@{move1button}"><span class="move-title move-title-1" name="attr_move_title_1"></span></button>
+            <span class="move1" name="attr_move1"></span><br />
+            <span class="move2" name="attr_move2"></span><br />
+            <span class="move3" name="attr_move3"></span><br />
+            <span class="move4" name="attr_move4"></span><br />
+        </div>
+        <!--
         <div class="moveset augmented-moveset">
             <input type="hidden" name="attr_move_limit" class="move-limit" />
             <span class="pick-move-text"><i>Pick two:</i></span><br />
@@ -524,6 +536,7 @@
             <br /><br />
             <span class="move"><b>Mine's the Nicest:</b> You put a lot of effort and love into the ships and colonies you maintain, and you know them like the back of your hand. Roll +tech instead of +head when you <i>Survey the Scene</i> on your own ship or colony.</span>
         </div>
+        -->
     </div>
 </div>
 
@@ -646,6 +659,73 @@ Minifridge: +1 to +group when trying to Influence Someone in your workroom"
         }
     };
 
+    const moveset = {
+        augmentedBase: {
+            move_title_1: "With Your Special Eyes:",
+            move1: "They definitely had your brand when you upgraded your visual input. With your augmented eyes, you \
+can see in near total darkness, and get a +1 when surveying a scene in bad lighting.",
+            move2: { head: "+2", hand: "+1", heart: "+0", group: "-2", tech: "+1" },
+            move3: { head: "+1", hand: "+2", heart: "-1", group: "+0", tech: "-1" },
+            move4: { head: "-1", hand: "+2", heart: "-2", group: "+2", tech: "+0" }
+        },
+        civilian: {
+            civilian1: { head: "+1", hand: "+0", heart: "+2", group: "+0", tech: "-1" },
+            civilian2: { head: "+0", hand: "+1", heart: "+2", group: "+0", tech: "-1" },
+            civilian3: { head: "+0", hand: "+0", heart: "+2", group: "+1", tech: "+1" },
+            civilian4: { head: "-1", hand: "-1", heart: "+1", group: "+2", tech: "+0" },
+            civilian5: { head: "+1", hand: "-2", heart: "+0", group: "+2", tech: "+1" }
+        },
+
+        leader: {
+            leader1: { head: "+2", hand: "+0", heart: "+0", group: "+1", tech: "+1" },
+            leader2: { head: "+2", hand: "+0", heart: "+1", group: "+0", tech: "+1" },
+            leader3: { head: "-2", hand: "+2", heart: "-1", group: "+2", tech: "+0" },
+            leader4: { head: "+1", hand: "+0", heart: "+2", group: "+2", tech: "-1" },
+            leader5: { head: "-1", hand: "+2", heart: "+2", group: "-1", tech: "+0" }
+        },
+
+        muscle: {
+            muscle1: { head: "+0", hand: "+2", heart: "+2", group: "-2", tech: "+0" },
+            muscle2: { head: "+1", hand: "+2", heart: "+0", group: "+0", tech: "-1" },
+            muscle3: { head: "+2", hand: "+1", heart: "+0", group: "-1", tech: "-1" },
+            muscle4: { head: "-1", hand: "+2", heart: "+2", group: "+1", tech: "-2" },
+            muscle5: { head: "+2", hand: "+0", heart: "-1", group: "+2", tech: "+0" }
+        },
+
+        scientist: {
+            scientist1: { head: "+2", hand: "-2", heart: "-1", group: "+1", tech: "+1" },
+            scientist2: { head: "+2", hand: "+0", heart: "-1", group: "+1", tech: "+2" },
+            scientist3: { head: "+1", hand: "+1", heart: "+0", group: "-1", tech: "+1" },
+            scientist4: { head: "+0", hand: "-1", heart: "+2", group: "-1", tech: "+2" },
+            scientist5: { head: "-1", hand: "+1", heart: "+2", group: "-1", tech: "+2" }
+        },
+
+        specialist: {
+            specialist1: { head: "+2", hand: "+0", heart: "-1", group: "-1", tech: "+2" },
+            specialist2: { head: "+1", hand: "-1", heart: "+0", group: "+0", tech: "+2" },
+            specialist3: { head: "+2", hand: "+1", heart: "+0", group: "-2", tech: "+0" },
+            specialist4: { head: "+0", hand: "+2", heart: "-2", group: "+0", tech: "+2" },
+            specialist5: { head: "-2", hand: "+2", heart: "+1", group: "+1", tech: "+0" }
+        },
+
+        stowaway: {
+            stowaway1: { head: "+2", hand: "+0", heart: "+1", group: "+0", tech: "-1" },
+            stowaway2: { head: "+0", hand: "+2", heart: "+1", group: "-1", tech: "-1" },
+            stowaway3: { head: "-1", hand: "+1", heart: "+2", group: "+0", tech: "-1" },
+            stowaway4: { head: "+2", hand: "+0", heart: "+2", group: "-1", tech: "-2" },
+            stowaway5: { head: "+0", hand: "+2", heart: "-1", group: "-2", tech: "+2" }
+        },
+
+        technician: {
+            technician1: { head: "+2", hand: "+0", heart: "-1", group: "+0", tech: "+2" },
+            technician2: { head: "+1", hand: "-1", heart: "+0", group: "+0", tech: "+2" },
+            technician3: { head: "+3", hand: "-1", heart: "-1", group: "+0", tech: "+1" },
+            technician4: { head: "+1", hand: "+1", heart: "+1", group: "+0", tech: "+0" },
+            technician5: { head: "-2", hand: "+1", heart: "+1", group: "+0", tech: "+1" }
+        }
+    };
+
+
     on('change:variant', function(eventInfo) {
         console.log(eventInfo);
         if (typeof spaceInfo[eventInfo.newValue] != "undefined") {
@@ -657,17 +737,24 @@ Minifridge: +1 to +group when trying to Influence Someone in your workroom"
                 setAttrs({ "space": spaceInfo[defaultValue] });
             });
         };
+       adjustMoves([eventInfo.newValue]);
     });
+
+    function adjustMoves(variant) {
+        setAttrs({ "move_title_1": moveset[variant]["move_title_1"], "move1": moveset[variant]["move1"], "move2": variant, "move3": variant, "move4": variant });
+    }
 
     on('change:skill_points', function(eventInfo) {
         // console.log(eventInfo);
-        getAttrs(["archetype"], function(choice) {
+        if(eventInfo.newValue != "blank") {
+            getAttrs(["archetype"], function(choice) {
             // console.log(choice);
-            if(eventInfo.newValue != "blank") {
                 selection = skillsInfo[choice.archetype][eventInfo.newValue];
                 setAttrs({ "head": selection.head, "hand": selection.hand, "heart": selection.heart, "group": selection.group, "tech": selection.tech });
-            };
-        });
+            });
+        } else {
+            setAttrs({ "head": "", "hand": "", "heart": "", "group": "", "tech": "" });
+        };
     });
 
     intuitionValues.forEach(function(value) {

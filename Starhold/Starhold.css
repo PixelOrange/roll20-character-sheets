@@ -259,34 +259,55 @@ div.sheet-moves {
     width: 439px;
 }
 
-div.sheet-moveset {
-    display: none;
-}
-
 div.sheet-xp {
     position: absolute;
     right: 2px;
     top: 3px;
-    width: 110px;
+    width: 200px;
+    padding-left: 2px;
+    border-bottom: solid 1px;
+    border-left: solid 1px;
 }
 
 div.sheet-xp-display {
     position: absolute;
-    right: 1px;
-    top: 0px;
+    right: 90px;
+    top: -1px;
 }
 
 div.sheet-xp-buttons {
     position: absolute;
-    right: 1px;
-    top: -3px;
+    right: 90px;
+    top: -4px;
     z-index: 1;
     opacity: 0;
+}
+
+div.sheet-level {
+    position: absolute;
+    right: 1px;
+    top: 1px;
 }
 
 button.sheet-xp-tracker {
     margin: 0px;
     padding: 4.5px;
+}
+
+button[type=roll].sheet-move-title {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    background-image: none;
+    box-shadow: none;
+}
+
+button.sheet-move-title::before {
+    display: none;
+}
+
+span.sheet-move-title {
+    font-weight: bold;
 }
 
 /* Augment and Variant Moves */
