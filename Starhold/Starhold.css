@@ -77,6 +77,7 @@ input, select, textarea {
 .sheet-attr-appearance, .sheet-attr-space, .sheet-attr-notes {
     background: white;
     width: 381px;
+    margin-bottom: 2px;
 }
 
 /* Affects Right Column */
