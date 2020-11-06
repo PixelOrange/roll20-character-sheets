@@ -1,14 +1,14 @@
-<div class="col1">
-    <div class="name">
-        <img class="name" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/name.png"><br />
-        <input type="text" name="attr_character" class="character-name" />
+<div class="col1 absolute">
+    <div class="name-wrapper relative">
+        <img class="name relative" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/name.png"><br />
+        <input type="text" name="attr_character_name" class="attr-name" />
     </div>
-    <div class="attitude">
-        <img class="attitude" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/attitude.png"><br />
-        <input type="text" name="attr_attitude" class="attitude" />
-    </div><br />
-    <div class="class-select">
-        <span class="archetype">
+    <div class="attitude-wrapper relative">
+        <img class="attitude relative" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/attitude.png"><br />
+        <input type="text" name="attr_attitude" class="attr-attitude" />
+    </div>
+    <div class="class-select-wrapper relative">
+        <span>
             <select name="attr_archetype" class="archetype">
                 <option value="blank">{Archetype}</option>
                 <option value="augmented">The Augmented</option>
@@ -26,7 +26,7 @@
         <input type="hidden" name="attr_archetype" class="archetype-switch" />
 
         <span class="variant augmented">
-            <select name="attr_variant" class="variant">
+            <select name="attr_variant" class="attr-variant">
                 <option value="blank">{Variant}</option>
                 <option value="augmentedBase">Base</option>
                 <option value="almostHuman">The Almost-Human</option>
@@ -44,7 +44,7 @@
             </select>
         </span>
         <span class="variant civilian">
-            <select name="attr_variant" class="variant">
+            <select name="attr_variant" class="attr-variant">
                 <option value="blank">{Variant}</option>
                 <option value="civilianBase">Base</option>
                 <option value="entertainer">The Entertainer</option>
@@ -62,7 +62,7 @@
             </select>
         </span>
         <span class="variant leader">
-            <select name="attr_variant" class="variant">
+            <select name="attr_variant" class="attr-variant">
                 <option value="blank">{Variant}</option>
                 <option value="leaderBase">Base</option>
                 <option value="commander">The Commander</option>
@@ -80,7 +80,7 @@
             </select>
         </span>
         <span class="variant muscle">
-            <select name="attr_variant" class="variant">
+            <select name="attr_variant" class="attr-variant">
                 <option value="blank">{Variant}</option>
                 <option value="muscleBase">Base</option>
                 <option value="exMarine">The Ex-Marine</option>
@@ -98,7 +98,7 @@
             </select>
         </span>
         <span class="variant scientist">
-            <select name="attr_variant" class="variant">
+            <select name="attr_variant" class="attr-variant">
                 <option value="blank">{Variant}</option>
                 <option value="scientistBase">Base</option>
                 <option value="biologist">The Biologist</option>
@@ -116,7 +116,7 @@
             </select>
         </span>
         <span class="variant specialist">
-            <select name="attr_variant" class="variant">
+            <select name="attr_variant" class="attr-variant">
                 <option value="blank">{Variant}</option>
                 <option value="specialistBase">Base</option>
                 <option value="academic">The Academic</option>
@@ -134,7 +134,7 @@
             </select>
         </span>
         <span class="variant stowaway">
-            <select name="attr_variant" class="variant">
+            <select name="attr_variant" class="attr-variant">
                 <option value="blank">{Variant}</option>
                 <option value="stowawayBase">Base</option>
                 <option value="criminal">The Criminal</option>
@@ -152,7 +152,7 @@
             </select>
         </span>
         <span class="variant technician">
-            <select name="attr_variant" class="variant">
+            <select name="attr_variant" class="attr-variant">
                 <option value="blank">{Variant}</option>
                 <option value="technicianBase">Base</option>
                 <option value="engineer">The Engineer</option>
@@ -170,125 +170,130 @@
             </select>
         </span>
     </div>
-    <div class="appearance">
-        <img class="appearance" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/appearance.png"><br />
+    <div class="appearance-wrapper relative">
+        <img class="appearance relative" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/appearance.png"><br />
         <textarea name="attr_appearance" class="attr-appearance"></textarea>
     </div>
-    <div class="space">
-        <img class="space" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/space.png"><br />
+    <div class="space-wrapper relative">
+        <img class="space relative" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/space.png"><br />
         <textarea name="attr_space" class="attr-space"></textarea>
     </div>
-    <div class="notes">
-        <img class="notes" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/notes.png"><br />
+    <div class="notes-wrapper relative">
+        <img class="notes relative" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/notes.png"><br />
         <textarea name="attr_notes" class="attr-notes"></textarea>
     </div>
 </div>
-<div class='col2'>
-    <div class="stats">
+<div class='col2 absolute'>
+    <div class="stats-wrapper relative">
         <img class="statblock" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/stats.png">
-        <span class="stats-text head-text">Planning<br />Intelligence</span>
-        <input type="text" name="attr_head" class="stats head" />
-        <span class="stats-text hand-text">Strength<br />Combat</span>
-        <input type="text" name="attr_hand" class="stats hand" />
-        <span class="stats-text heart-text">Empathy<br />Stability</span>
-        <input type="text" name="attr_heart" class="stats heart" />
-        <span class="stats-text group-text">Negotiation<br />Networking</span>
-        <input type="text" name="attr_group" class="stats group" />
-        <span class="stats-text tech-text">Abilities<br />Use Items</span>
-        <input type="text" name="attr_tech" class="stats tech" />
+        <span class="stats-text head-text absolute">Planning<br />Intelligence</span>
+        <input type="text" name="attr_head" class="stats head absolute" />
+        <span class="stats-text hand-text absolute">Strength<br />Combat</span>
+        <input type="text" name="attr_hand" class="stats hand absolute" />
+        <span class="stats-text heart-text absolute">Empathy<br />Stability</span>
+        <input type="text" name="attr_heart" class="stats heart absolute" />
+        <span class="stats-text group-text absolute">Negotiation<br />Networking</span>
+        <input type="text" name="attr_group" class="stats group absolute" />
+        <span class="stats-text tech-text absolute">Abilities<br />Use Items</span>
+        <input type="text" name="attr_tech" class="stats tech absolute" />
     </div>
-    <br />
-    <div class="intuition">
+    <div class="intuition-section relative">
         <img src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/intuition.png"><br />
         <p class="intuition-description">Remove an Intuition to change a roll to an Incredible Success
             or to avoid all harm in one event.</p>
-        <div class="intuition-tracker">
+        <div class="intuition-buttons-wrapper absolute">
             <span class="good">GOOD</span>
-            <button type="action" name="act_intuition_1" class="status-tracker"></button>
-            <button type="action" name="act_intuition_2" class="status-tracker"></button>
-            <button type="action" name="act_intuition_3" class="status-tracker"></button>
-            <button type="action" name="act_intuition_4" class="status-tracker"></button>
-            <button type="action" name="act_intuition_5" class="status-tracker"></button>
-            <button type="action" name="act_intuition_6" class="status-tracker"></button>
-            <button type="action" name="act_intuition_7" class="status-tracker"></button>
-            <input type="checkbox" name="attr_intuition1" class="status-tracker intuition-display" />
-            <input type="checkbox" name="attr_intuition2" class="status-tracker intuition-display" />
-            <input type="checkbox" name="attr_intuition3" class="status-tracker intuition-display" />
-            <input type="checkbox" name="attr_intuition4" class="status-tracker intuition-display" />
-            <input type="checkbox" name="attr_intuition5" class="status-tracker intuition-display" />
-            <input type="checkbox" name="attr_intuition6" class="status-tracker intuition-display" />
-            <input type="checkbox" name="attr_intuition7" class="status-tracker intuition-display" />
-            <span class="tracker-end-text done-for">DONE FOR</span>
+            <button type="action" name="act_intuition_1" class="buttons intuition-buttons"></button>
+            <button type="action" name="act_intuition_2" class="buttons intuition-buttons"></button>
+            <button type="action" name="act_intuition_3" class="buttons intuition-buttons"></button>
+            <button type="action" name="act_intuition_4" class="buttons intuition-buttons"></button>
+            <button type="action" name="act_intuition_5" class="buttons intuition-buttons"></button>
+            <button type="action" name="act_intuition_6" class="buttons intuition-buttons"></button>
+            <button type="action" name="act_intuition_7" class="buttons intuition-buttons"></button>
+        </div>
+        <div class="intuition-display-wrapper absolute">
+            <input type="checkbox" name="attr_intuition1" class="display intuition-display" />
+            <input type="checkbox" name="attr_intuition2" class="display intuition-display" />
+            <input type="checkbox" name="attr_intuition3" class="display intuition-display" />
+            <input type="checkbox" name="attr_intuition4" class="display intuition-display" />
+            <input type="checkbox" name="attr_intuition5" class="display intuition-display" />
+            <input type="checkbox" name="attr_intuition6" class="display intuition-display" />
+            <input type="checkbox" name="attr_intuition7" class="display intuition-display" />
+            <span class="tracker-end-text done-for relative">DONE FOR</span>
         </div>
     </div>
-    <div class="harm-stress">
+    <div class="harm-stress-section relative">
         <img src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/harmstress.png"><br />
         <p class="harm-description">Mark a harm when you're injured. At 5 harm you are unstable.</p>
-        <div class="harm-tracker">
+        <div class="harm-buttons-wrapper absolute">
             <span class="healthy">HEALTHY</span>
-            <button type="action" name="act_harm_1" class="status-tracker"></button>
-            <button type="action" name="act_harm_2" class="status-tracker"></button>
-            <button type="action" name="act_harm_3" class="status-tracker"></button>
-            <button type="action" name="act_harm_4" class="status-tracker"></button>
-            <button type="action" name="act_harm_5" class="status-tracker"></button>
-            <button type="action" name="act_harm_6" class="status-tracker"></button>
-            <button type="action" name="act_harm_7" class="status-tracker"></button>
-            <input type="checkbox" name="attr_harm1" class="status-tracker harm-display" />
-            <input type="checkbox" name="attr_harm2" class="status-tracker harm-display" />
-            <input type="checkbox" name="attr_harm3" class="status-tracker harm-display" />
-            <input type="checkbox" name="attr_harm4" class="status-tracker harm-display" />
-            <input type="checkbox" name="attr_harm5" class="status-tracker harm-display" />
-            <input type="checkbox" name="attr_harm6" class="status-tracker harm-display" />
-            <input type="checkbox" name="attr_harm7" class="status-tracker harm-display" />
-            <span class="tracker-end-text dying">DYING</span>
+            <button type="action" name="act_harm_1" class="buttons harm-buttons"></button>
+            <button type="action" name="act_harm_2" class="buttons harm-buttons"></button>
+            <button type="action" name="act_harm_3" class="buttons harm-buttons"></button>
+            <button type="action" name="act_harm_4" class="buttons harm-buttons"></button>
+            <button type="action" name="act_harm_5" class="buttons harm-buttons"></button>
+            <button type="action" name="act_harm_6" class="buttons harm-buttons"></button>
+            <button type="action" name="act_harm_7" class="buttons harm-buttons"></button>
         </div>
-        <br />
+        <div class="harm-display-wrapper absolute">
+            <input type="checkbox" name="attr_harm1" class="display harm-display" />
+            <input type="checkbox" name="attr_harm2" class="display harm-display" />
+            <input type="checkbox" name="attr_harm3" class="display harm-display" />
+            <input type="checkbox" name="attr_harm4" class="display harm-display" />
+            <input type="checkbox" name="attr_harm5" class="display harm-display" />
+            <input type="checkbox" name="attr_harm6" class="display harm-display" />
+            <input type="checkbox" name="attr_harm7" class="display harm-display" />
+            <span class="tracker-end-text dying relative">DYING</span>
+        </div>
+        <br /><br />
         <p class="stress-description">Mark a stress when directed. Erase a mark after downtime.
             After the 5th stress mark, you are panicked.</p>
-        <div class="stress-tracker">
+        <div class="stress-buttons-wrapper absolute">
             <span class="alright">ALRIGHT</span>
-            <button type="action" name="act_stress_1" class="status-tracker"></button>
-            <button type="action" name="act_stress_2" class="status-tracker"></button>
-            <button type="action" name="act_stress_3" class="status-tracker"></button>
-            <button type="action" name="act_stress_4" class="status-tracker"></button>
-            <button type="action" name="act_stress_5" class="status-tracker"></button>
-            <input type="checkbox" name="attr_stress1" class="status-tracker stress-display" />
-            <input type="checkbox" name="attr_stress2" class="status-tracker stress-display" />
-            <input type="checkbox" name="attr_stress3" class="status-tracker stress-display" />
-            <input type="checkbox" name="attr_stress4" class="status-tracker stress-display" />
-            <input type="checkbox" name="attr_stress5" class="status-tracker stress-display" />
-            <span class="tracker-end-text exhausted">EXHAUSTED</span>
+            <button type="action" name="act_stress_1" class="buttons stress-buttons"></button>
+            <button type="action" name="act_stress_2" class="buttons stress-buttons"></button>
+            <button type="action" name="act_stress_3" class="buttons stress-buttons"></button>
+            <button type="action" name="act_stress_4" class="buttons stress-buttons"></button>
+            <button type="action" name="act_stress_5" class="buttons stress-buttons"></button>
+        </div>
+        <div class="stress-display-wrapper absolute">
+            <input type="checkbox" name="attr_stress1" class="display stress-display" />
+            <input type="checkbox" name="attr_stress2" class="display stress-display" />
+            <input type="checkbox" name="attr_stress3" class="display stress-display" />
+            <input type="checkbox" name="attr_stress4" class="display stress-display" />
+            <input type="checkbox" name="attr_stress5" class="display stress-display" />
+            <span class="tracker-end-text exhausted relative">EXHAUSTED</span>
         </div>
     </div>
-    <div class="scars">
-        <img class="scars" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/scars.png"><br />
+    <div class="scars-wrapper absolute">
+        <img class="scars relative" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/scars.png"><br />
         <textarea name="attr_scars" class="attr-scars"></textarea>
-    </div><br />
-    <div class="moves">
+    </div>
+    <div class="moves-wrapper relative">
         <img class="moves" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/moves.png"><br />
         <input type="hidden" name="attr_variant" class="moveset-switch" />
-        <div class="xp">
+        <div class="advancement-wrapper absolute">
             <img class="xp" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/xp.png">
-            <div class="xp-buttons">
-                <button type="action" name="act_xp_1" class="xp-tracker"></button>
-                <button type="action" name="act_xp_2" class="xp-tracker"></button>
-                <button type="action" name="act_xp_3" class="xp-tracker"></button>
-                <button type="action" name="act_xp_4" class="xp-tracker"></button>
-                <button type="action" name="act_xp_5" class="xp-tracker"></button>
+            <div class="xp-buttons-wrapper absolute">
+                <button type="action" name="act_xp_1" class="buttons xp-buttons"></button>
+                <button type="action" name="act_xp_2" class="buttons xp-buttons"></button>
+                <button type="action" name="act_xp_3" class="buttons xp-buttons"></button>
+                <button type="action" name="act_xp_4" class="buttons xp-buttons"></button>
+                <button type="action" name="act_xp_5" class="buttons xp-buttons"></button>
             </div>
-            <div class="xp-display">
-                <input type="checkbox" name="attr_xp1" class="xp-tracker xp-display" />
-                <input type="checkbox" name="attr_xp2" class="xp-tracker xp-display" />
-                <input type="checkbox" name="attr_xp3" class="xp-tracker xp-display" />
-                <input type="checkbox" name="attr_xp4" class="xp-tracker xp-display" />
-                <input type="checkbox" name="attr_xp5" class="xp-tracker xp-display" />
+            <div class="xp-display-wrapper absolute">
+                <input type="checkbox" name="attr_xp1" class="xp-display" />
+                <input type="checkbox" name="attr_xp2" class="xp-display" />
+                <input type="checkbox" name="attr_xp3" class="xp-display" />
+                <input type="checkbox" name="attr_xp4" class="xp-display" />
+                <input type="checkbox" name="attr_xp5" class="xp-display" />
             </div>
-            <div class="level">
+            <div class="level-wrapper absolute">
                 <img class="level" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/level.png"><br />
-                <span class="level" name="attr_level"></span>
+                <span name="attr_level" class="attr-level absolute"></span>
             </div>
         </div>
-                <div class="moveset augmented-moveset">
+        <div class="moveset augmented-moveset">
             <input type="hidden" name="attr_move_limit" class="move-limit" />
             <span class="pick-move-text"><i>Pick two:</i></span><br />
             <input type="checkbox" name="attr_move1" class="move move1" />
@@ -711,7 +716,7 @@ Minifridge: +1 to +group when trying to Influence Someone in your workroom"
     });
 
     function updateAttributes(key, value, range) {
-        // console.log("Key: " + key + " Value: " + value + " Range: " + range);
+        console.log("Key: " + key + " Value: " + value + " Range: " + range);
         getAttrs([key], function(level) {
             // console.log(level);
             if (level[key] == 1) {

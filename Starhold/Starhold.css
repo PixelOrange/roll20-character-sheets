@@ -1,6 +1,14 @@
 /* Affects Entire Sheet */
 
-span, textarea, p {
+.sheet-relative {
+    position: relative;
+}
+
+.sheet-absolute {
+    position: absolute;
+}
+
+input, select, span, textarea, p {
     font-family: "Lucida Console"
 }
 
@@ -10,160 +18,152 @@ input, select, textarea {
 
 /* Affects Left Column */
 
-div.sheet-col1 {
-    position: absolute;
+.sheet-col1 {
     min-width: 400px;
     left: 1px;
     white-space: nowrap;
 }
 
-div.sheet-name, div.sheet-attitude {
-    position: relative;
+.sheet-name-wrapper, .sheet-attitude-wrapper {
     display:inline-block;
     vertical-align:top;
     margin-bottom: 10px;
 }
 
-img.sheet-name, img.sheet-attitude {
-    position: relative;
+.sheet-name, .sheet-attitude, .sheet-appearance, .sheet-space, .sheet-notes {
     left: 3px;
 }
 
-input.sheet-character-name {
+.sheet-attr-name, .sheet-attr-attitude {
+    border: solid 1px;
+}
+
+.sheet-attr-name {
     width: 220px;
 }
 
-input.sheet-attitude {
+.sheet-attr-attitude {
     width: 168px;
 }
 
-div.sheet-class-select {
-    position: relative;
-    min-height: 80px;
+.sheet-class-select-wrapper {
+    min-height: 73px;
 }
 
-select.sheet-archetype, select.sheet-variant {
+.sheet-archetype, .sheet-attr-variant {
     width: 192px;
 }
 
-span.sheet-variant {
+.sheet-variant {
     display: none;
 }
 
-select.sheet-skill-points {
+.sheet-skill-points {
     width: 391px;
+    margin: 0px;
 }
 
-input.sheet-archetype-switch[value="augmented"] ~ span.sheet-augmented,
-input.sheet-archetype-switch[value="civilian"] ~ span.sheet-civilian,
-input.sheet-archetype-switch[value="leader"] ~ span.sheet-leader,
-input.sheet-archetype-switch[value="muscle"] ~ span.sheet-muscle,
-input.sheet-archetype-switch[value="scientist"] ~ span.sheet-scientist,
-input.sheet-archetype-switch[value="specialist"] ~ span.sheet-specialist,
-input.sheet-archetype-switch[value="stowaway"] ~ span.sheet-stowaway,
-input.sheet-archetype-switch[value="technician"] ~ span.sheet-technician {
+.sheet-archetype-switch[value="augmented"] ~ span.sheet-augmented,
+.sheet-archetype-switch[value="civilian"] ~ span.sheet-civilian,
+.sheet-archetype-switch[value="leader"] ~ span.sheet-leader,
+.sheet-archetype-switch[value="muscle"] ~ span.sheet-muscle,
+.sheet-archetype-switch[value="scientist"] ~ span.sheet-scientist,
+.sheet-archetype-switch[value="specialist"] ~ span.sheet-specialist,
+.sheet-archetype-switch[value="stowaway"] ~ span.sheet-stowaway,
+.sheet-archetype-switch[value="technician"] ~ span.sheet-technician {
     display: inline;
 }
 
-div.sheet-appearance, div.sheet-space, div.sheet-notes {
-    position: relative;
-}
-
-
-
-textarea.sheet-attr-appearance, textarea.sheet-attr-space, textarea.sheet-attr-notes {
+.sheet-attr-appearance, .sheet-attr-space, .sheet-attr-notes {
     background: white;
     width: 381px;
 }
 
 /* Affects Right Column */
 
-div.sheet-col2 {
-    position: absolute;
+.sheet-col2 {
     min-width: 460px;
     left: 410px;
 }
 
-div.sheet-stats {
-    position: relative;
+.sheet-stats-wrapper {
     top: 5px;
+    margin-bottom: 10px;
 }
 
-input.sheet-stats {
-    position: absolute;
+.sheet-stats-text {
+    text-align: center;
+}
+
+.sheet-stats {
     width: 70px;
     font-size: 20px;
     text-align: center;
+    border: solid 1px;
 }
 
-input.sheet-head, input.sheet-heart, input.sheet-tech {
-    top: 30px;
-}
-
-input.sheet-hand, input.sheet-group {
-    top: 80px;
-}
-
-input.sheet-head {
-    left: 20px;
-}
-
-input.sheet-hand {
-    left: 105px;
-}
-
-input.sheet-heart {
-    left: 190px;
-}
-
-input.sheet-group {
-    left: 275px;
-}
-
-input.sheet-tech {
-    left: 360px;
-}
-
-span.sheet-stats-text {
-    position: absolute;
-    text-align: center;
-}
-
-span.sheet-head-text, span.sheet-heart-text, span.sheet-tech-text {
+.sheet-head-text, .sheet-heart-text, .sheet-tech-text {
     top: 105px;
 }
 
-span.sheet-hand-text, span.sheet-group-text {
+.sheet-head, .sheet-heart, .sheet-tech {
+    top: 30px;
+}
+
+.sheet-hand-text, .sheet-group-text {
     top: -2px;
 }
 
-span.sheet-head-text {
+.sheet-hand, .sheet-group {
+    top: 80px;
+}
+
+.sheet-head-text {
     color: blue;
     left: 5px;
 }
 
-span.sheet-hand-text {
+.sheet-head {
+    left: 20px;
+}
+
+.sheet-hand-text {
     color: green;
     left: 109px;
 }
 
-span.sheet-heart-text {
+.sheet-hand {
+    left: 105px;
+}
+
+.sheet-heart-text {
     color: red;
     left: 189px;
 }
 
-span.sheet-group-text {
+.sheet-heart {
+    left: 190px;
+}
+
+.sheet-group-text {
     color: purple;
     left: 266px;
 }
 
-span.sheet-tech-text {
+.sheet-group {
+    left: 275px;
+}
+
+.sheet-tech-text {
     color: goldenrod;
     left: 360px;
 }
 
-div.sheet-intuition, div.sheet-moves, div.sheet-harm-stress {
-    position: relative;
+.sheet-tech {
+    left: 360px;
+}
+
+.sheet-intuition-section, .sheet-harm-stress-section {
     display: inline-block;
     padding: 3px;
     border: 1px solid;
@@ -172,74 +172,56 @@ div.sheet-intuition, div.sheet-moves, div.sheet-harm-stress {
     vertical-align: top;
 }
 
-div.sheet-intuition-tracker, div.sheet-harm-tracker, div.sheet-stress-tracker {
-    white-space: nowrap;
+.sheet-intuition-section {
+    height: 135px;
 }
 
-button.sheet-status-tracker {
-    position: relative;
+.sheet-harm-stress-section {
+    height: 236px;
+}
+
+.sheet-intuition-buttons-wrapper, .sheet-harm-buttons-wrapper, .sheet-stress-buttons-wrapper {
+    z-index: 1;
+}
+
+.sheet-intuition-display-wrapper {
+    left: 38px;
+}
+
+.sheet-harm-display-wrapper, .sheet-stress-display-wrapper {
+    left: 61.5px;
+}
+
+.sheet-buttons {
     vertical-align: text-top;
     margin: 0px;
     padding: 4.5px;
-    z-index: 1;
     opacity: 0;
 }
 
-span.sheet-tracker-end-text {
-    position: relative;
-    margin: 0px;
-}
-
-input.sheet-intuition-display, input.sheet-harm-display, span.sheet-dying, span.sheet-done-for {
-    left: -116.4px;
-}
-
-input.sheet-stress-display, span.sheet-exhausted {
-    left: -83px;
-}
-
-input.sheet-intuition-display, input.sheet-harm-display, input.sheet-stress-display {
-    position: relative;
-    vertical-align: text-top;
+input.sheet-display, input.sheet-xp-display {
     -webkit-appearance: none;
     -moz-appearance: none;
     -o-appearance: none;
     appearance: none;
+    vertical-align: text-top;
     padding: 5.5px;
     height: 3px;
     width: 3px;
     margin: 0px;
-    border: 1px solid;
-    outline: none;
     cursor: pointer;
     background-color: white;
 }
 
-input.sheet-intuition-display:checked, input.sheet-harm-display:checked, input.sheet-stress-display:checked {
+input.sheet-display:checked {
     background-color: red;
 }
 
-div.sheet-scars {
-    position: absolute;
-    top: 310px;
+input.sheet-xp-display:checked {
+    background-color: lightgreen;
 }
 
-img.sheet-scars {
-    position: relative;
-    left: 3px;
-}
-
-textarea.sheet-attr-scars {
-    width: 212px;
-    height: 69px;
-}
-
-div.sheet-moves {
-    width: 439px;
-}
-
-div.sheet-xp {
-    position: absolute;
+.sheet-advancement-wrapper {
     right: 2px;
     top: 3px;
     width: 210px;
@@ -248,23 +230,16 @@ div.sheet-xp {
     border-left: solid 1px;
 }
 
-div.sheet-xp-display, div.sheet-xp-buttons {
-    position: absolute;
+.sheet-xp-buttons-wrapper, .sheet-xp-display-wrapper {
+    top: 1px;
     right: 100px;
 }
 
-div.sheet-xp-display {
-    top: -1px;
-}
-
-div.sheet-xp-buttons {
-    top: -4px;
+.sheet-xp-buttons-wrapper {
     z-index: 1;
-    opacity: 0;
 }
 
-div.sheet-level {
-    position: absolute;
+.sheet-level-wrapper {
     right: 0px;
     top: 0px;
     width: 90px;
@@ -272,71 +247,72 @@ div.sheet-level {
     padding-left: 5px;
 }
 
-span.sheet-level {
-    position: absolute;
+.sheet-attr-level {
     font-size: 20px;
     top: -4px;
     right: 0px;
 }
 
-button.sheet-xp-tracker {
-    margin: 0px;
-    padding: 4.5px;
+.sheet-scars-wrapper {
+    top: 302px;
 }
 
-button[type=roll].sheet-move-title {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    background-image: none;
-    box-shadow: none;
+.sheet-scars {
+    left: 3px;
 }
 
-button.sheet-move-title::before {
-    display: none;
+.sheet-attr-scars {
+    width: 212px;
+    height: 69px;
 }
 
-span.sheet-move-title {
+.sheet-moves-wrapper {
+    width: 439px;
+    border: solid 1px;
+    padding: 3px;
+}
+
+.sheet-move-title {
     font-weight: bold;
 }
 
-div.sheet-moveset {
+.sheet-moveset {
     display: none;
 }
 
 /* Augment and Variant Moves */
-input.sheet-moveset-switch[value="augmentedBase"] ~ div.sheet-augmented-moveset,
-input.sheet-moveset-switch[value="almostHuman"] ~ div.sheet-almost-human-moveset,
-input.sheet-moveset-switch[value="construct"] ~ div.sheet-construct-moveset,
-input.sheet-moveset-switch[value="cyborg"] ~ div.sheet-cyborg-moveset,
-input.sheet-moveset-switch[value="civilianBase"] ~ div.sheet-civilian-moveset,
-input.sheet-moveset-switch[value="entertainer"] ~ div.sheet-entertainer-moveset,
-input.sheet-moveset-switch[value="homesteader"] ~ div.sheet-homesteader-moveset,
-input.sheet-moveset-switch[value="merchant"] ~ div.sheet-merchant-moveset,
-input.sheet-moveset-switch[value="leaderBase"] ~ div.sheet-leader-moveset,
-input.sheet-moveset-switch[value="commander"] ~ div.sheet-commander-moveset,
-input.sheet-moveset-switch[value="diplomat"] ~ div.sheet-diplomat-moveset,
-input.sheet-moveset-switch[value="shepherd"] ~ div.sheet-shepherd-moveset,
-input.sheet-moveset-switch[value="muscleBase"] ~ div.sheet-muscle-moveset,
-input.sheet-moveset-switch[value="exMarine"] ~ div.sheet-ex-marine-moveset,
-input.sheet-moveset-switch[value="miner"] ~ div.sheet-miner-moveset,
-input.sheet-moveset-switch[value="security"] ~ div.sheet-security-moveset,
-input.sheet-moveset-switch[value="scientistBase"] ~ div.sheet-scientist-moveset,
-input.sheet-moveset-switch[value="biologist"] ~ div.sheet-biologist-moveset,
-input.sheet-moveset-switch[value="chemist"] ~ div.sheet-chemist-moveset,
-input.sheet-moveset-switch[value="medic"] ~ div.sheet-medic-moveset,
-input.sheet-moveset-switch[value="specialistBase"] ~ div.sheet-specialist-moveset,
-input.sheet-moveset-switch[value="academic"] ~ div.sheet-academic-moveset,
-input.sheet-moveset-switch[value="pilot"] ~ div.sheet-pilot-moveset,
-input.sheet-moveset-switch[value="weaponsExpert"] ~ div.sheet-weapons-expert-moveset,
-input.sheet-moveset-switch[value="stowawayBase"] ~ div.sheet-stowaway-moveset,
-input.sheet-moveset-switch[value="criminal"] ~ div.sheet-criminal-moveset,
-input.sheet-moveset-switch[value="kid"] ~ div.sheet-kid-moveset,
-input.sheet-moveset-switch[value="survivor"] ~ div.sheet-survivor-moveset,
-input.sheet-moveset-switch[value="technicianBase"] ~ div.sheet-technician-moveset,
-input.sheet-moveset-switch[value="engineer"] ~ div.sheet-engineer-moveset,
-input.sheet-moveset-switch[value="hacker"] ~ div.sheet-hacker-moveset,
-input.sheet-moveset-switch[value="mechanic"] ~ div.sheet-mechanic-moveset {
+.sheet-moveset-switch[value="augmentedBase"] ~ .sheet-augmented-moveset,
+.sheet-moveset-switch[value="almostHuman"] ~ .sheet-almost-human-moveset,
+.sheet-moveset-switch[value="construct"] ~ .sheet-construct-moveset,
+.sheet-moveset-switch[value="cyborg"] ~ .sheet-cyborg-moveset,
+.sheet-moveset-switch[value="civilianBase"] ~ .sheet-civilian-moveset,
+.sheet-moveset-switch[value="entertainer"] ~ .sheet-entertainer-moveset,
+.sheet-moveset-switch[value="homesteader"] ~ .sheet-homesteader-moveset,
+.sheet-moveset-switch[value="merchant"] ~ .sheet-merchant-moveset,
+.sheet-moveset-switch[value="leaderBase"] ~ .sheet-leader-moveset,
+.sheet-moveset-switch[value="commander"] ~ .sheet-commander-moveset,
+.sheet-moveset-switch[value="diplomat"] ~ .sheet-diplomat-moveset,
+.sheet-moveset-switch[value="shepherd"] ~ .sheet-shepherd-moveset,
+.sheet-moveset-switch[value="muscleBase"] ~ .sheet-muscle-moveset,
+.sheet-moveset-switch[value="exMarine"] ~ .sheet-ex-marine-moveset,
+.sheet-moveset-switch[value="miner"] ~ .sheet-miner-moveset,
+.sheet-moveset-switch[value="security"] ~ .sheet-security-moveset,
+.sheet-moveset-switch[value="scientistBase"] ~ .sheet-scientist-moveset,
+.sheet-moveset-switch[value="biologist"] ~ .sheet-biologist-moveset,
+.sheet-moveset-switch[value="chemist"] ~ .sheet-chemist-moveset,
+.sheet-moveset-switch[value="medic"] ~ .sheet-medic-moveset,
+.sheet-moveset-switch[value="specialistBase"] ~ .sheet-specialist-moveset,
+.sheet-moveset-switch[value="academic"] ~ .sheet-academic-moveset,
+.sheet-moveset-switch[value="pilot"] ~ .sheet-pilot-moveset,
+.sheet-moveset-switch[value="weaponsExpert"] ~ .sheet-weapons-expert-moveset,
+.sheet-moveset-switch[value="stowawayBase"] ~ .sheet-stowaway-moveset,
+.sheet-moveset-switch[value="criminal"] ~ .sheet-criminal-moveset,
+.sheet-moveset-switch[value="kid"] ~ .sheet-kid-moveset,
+.sheet-moveset-switch[value="survivor"] ~ .sheet-survivor-moveset,
+.sheet-moveset-switch[value="technicianBase"] ~ .sheet-technician-moveset,
+.sheet-moveset-switch[value="engineer"] ~ .sheet-engineer-moveset,
+.sheet-moveset-switch[value="hacker"] ~ .sheet-hacker-moveset,
+.sheet-moveset-switch[value="mechanic"] ~ .sheet-mechanic-moveset {
     display: inline;
 }
 
