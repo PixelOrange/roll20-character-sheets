@@ -1,3 +1,4 @@
+<div class="whole-sheet">
 <div class="col1 absolute">
     <div class="name-wrapper relative">
         <img class="name relative" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/name.png"><br />
@@ -186,14 +187,19 @@
 <div class='col2 absolute'>
     <div class="stats-wrapper relative">
         <img class="statblock" src="https://raw.githubusercontent.com/PixelOrange/roll20-character-sheets/master/Starhold/Images/stats.png">
+        <button type="roll" value="/em rolls head: [[2d6cs>7cf<0@{head}]]" name="roll_Head" class="head-roll absolute"></button>
         <span class="stats-text head-text absolute">Planning<br />Intelligence</span>
         <input type="text" name="attr_head" class="stats head absolute" />
+        <button type="roll" value="/roll 2d6@{hand}" name="roll_Hand" class="hand-roll absolute"></button>
         <span class="stats-text hand-text absolute">Strength<br />Combat</span>
         <input type="text" name="attr_hand" class="stats hand absolute" />
+        <button type="roll" value="/roll 2d6@{heart}" name="roll_Heart" class="heart-roll absolute"></button>
         <span class="stats-text heart-text absolute">Empathy<br />Stability</span>
         <input type="text" name="attr_heart" class="stats heart absolute" />
+        <button type="roll" value="/roll 2d6@{group}" name="roll_Group" class="group-roll absolute"></button>
         <span class="stats-text group-text absolute">Negotiation<br />Networking</span>
         <input type="text" name="attr_group" class="stats group absolute" />
+        <button type="roll" value="/roll 2d6@{tech}" name="roll_Tech" class="tech-roll absolute"></button>
         <span class="stats-text tech-text absolute">Abilities<br />Use Items</span>
         <input type="text" name="attr_tech" class="stats tech absolute" />
     </div>
@@ -309,16 +315,19 @@
             <span class="move-title">Fursona</span><br /><span class="move4">The latest augmentation techniques enhance your skin to withstand dangerous temperatures. If you pick <b>fur</b>, you are <i>impervious to cold down to -30°F</i>. If you pick <b>scales</b>, you are <i>impervious to heat up to 120°F</i>. Facial reconstruction to match augment choice included.</span>
         </div>
         <div class="moveset almost-human-moveset">
+            <br />
             <span class="move-title">Looking for Me?</span><br /><span class="move1">Sometimes the best way to get by is to blend in, and you have the uncanny ability to do it at will. Whenever <i>you need to hide in plain sight</i>, roll +tech. On a 10+, you disappear to all senses and sensors until you move. On a 7-9, you're mostly hidden. On a miss, you <i>think</i> you're hidden, but you're not.<br /></span>
             <br />
             <span class="move-title">Mind Trick</span><br /><span class="move2">You can't explain it, but sometimes you can sense what people are thinking. Roll +head instead of +heart whenever you <i>try to Get a Feeling</i> from someone.</span>
         </div>
         <div class="moveset construct-moveset">
+            <br />
             <span class="move-title">Live Long and Kick Ass</span><br /><span class="move1">You were made to survive. You take <i>+2 base armor</i> from the materials your body is constructed with, and <i>anyone meleeing you takes 1-harm</i>. This does not stack with other armor.<br /></span>
             <br />
             <span class="move-title">Unnatural</span><br /><span class="move2">Humans can heal on their own, but you've got nanites for that. You are <i>impervious to disease</i>, and <i>once per crisis you can instantly heal yourself for up to 3-harm</i>.</span>
         </div>
         <div class="moveset cyborg-moveset">
+            <br />
             <span class="move-title">Two by Two</span><br /><span class="move1">What's better than two hands? Four hands! Melding the human body with machine, you gave yourself an extra pair of arms to help in your daily tasks. You have <i>+1 extra gear (non-armor) and cannot be restrained.</i><br /></span>
             <br />
             <span class="move-title">Resistance is Futile</span><br /><span class="move2">You're the one everyone calls on moving day. Your machine-like strength is due to, well, machine-like muscles. You are <i>able to lift and move objects up to 500lbs</i>. You can do 2-harm when <i>meleeing someone barehanded</i>.</span>
@@ -339,16 +348,19 @@
             <span class="move-title">Back Off!</span><br /><span class="move4">You might not be much of a fighter, but you do what you need to to protect your friends. Roll +group instead of +hand when <i>Inflicting Harm after a nearby companion becomes unstable.</i></span>
         </div>
         <div class="moveset entertainer-moveset">
+            <br />
             <span class="move-title">Killing Them Softly</span><br /><span class="move1">You usually try to talk yourself out of a bad situation, but sometimes it doesn't work. Roll +heart instead of +hand when trying to <i>Inflict Harm on someone that you failed to Influence.</i><br /></span>
             <br />
             <span class="move-title">Oh, I'm Good</span><br /><span class="move2">It's always a confidence boost to see your hard work pay off. Take a +1 forward on your next +group roll when you <i>successfully Influence Someone.</i></span>
         </div>
         <div class="moveset homesteader-moveset">
+            <br />
             <span class="move-title">Resilience</span><br /><span class="move1">You're a long way from home, but you've got ways to make things work. When you <i>fail a roll affected by resource scarcity</i>, you can roll +group. On a 10+, you find a way to avoid complete disaster. On a 7-9 things aren't as bad as they initially appeared. On a miss, take a stress.<br /></span>
             <br />
             <span class="move-title">Country Comfort</span><br /><span class="move2">Life is harsh, and you've learned to cope. <i>When you are exhausted</i>, roll +heart. On a 10+ you avoid exhaustion and reduce your stress by one. On a 7-9 you put off exhaustion for a little while, but it makes things worse when it happens. On a miss, you're exhausted twice as long.</span>
         </div>
         <div class="moveset merchant-moveset">
+            <br />
             <span class="move-title">Waddaya Buyin'?</span><br /><span class="move1">People have needs, and you have the answer. If <i>somebody needs something unusual</i>, roll +group. On a 10+ you have what they need in stock and can sell it at a reasonable price. On a 7-9, you don't have it but you know where to get it, and it's going to be costly.<br /></span>
             <br />
             <span class="move-title">Underground Market</span><br /><span class="move2">Money's not the only thing you trade in. When you are in <i>desperate need of information or an item</i>, roll +group. On a 10+ you call in a favor to find what you need immediately. On a 7-9, you'll find it but you'll owe someone big time. On a miss, you've called in one-too-many favors and your contact is pissed about it.</span>
@@ -369,16 +381,19 @@
             <span class="move-title">Figurehead</span><br /><span class="move4">When you <i>give a group a dangerous command</i>, roll +group to see if they follow. On a 10+, they do it without question. On 7-9, they'll do it but only if you take the risk with them. On a miss, they revolt.</span>
         </div>
         <div class="moveset commander-moveset">
+            <br />
             <span class="move-title">I Should Go</span><br /><span class="move1">Sometimes even the best made plans can fail. Whenever you take part in a <i>tactical retreat</i>, you can command some of your crew to cover you. Roll +group. On a 10+ your crew successfully covers your exit before falling back to safety. On a 7-9, you get away at a cost. On a miss, the crew take 2 harm and your retreat is exposed.<br /></span>
             <br />
             <span class="move-title">Hold the Line</span><br /><span class="move2">You're the only thing standing between your crew and the enemy, but they won't get past you. During a combat encounter, roll +heart. On a full success you get a +1 ongoing to your +hand rolls until the end of the fight. On a mixed success, you get a +1 forward to your next +hand roll. On a miss, you lose your nerve and things go terribly wrong.</span>
         </div>
         <div class="moveset diplomat-moveset">
+            <br />
             <span class="move-title">Diplomatic Immunity</span><br /><span class="move1">People think you're an easy target, but they're wrong. When <i>someone tries to harm you</i>, roll +group to see if your bodyguard will save you. On a 10+, your bodyguard knocks you out of the way safely. On a miss, both you and your bodyguard have to deal with the consequences.<br /></span>
             <br />
             <span class="move-title">Skilled Negotiator</span><br /><span class="move2">Not everything is answered by a fight. When you try to <i>negotiate a peaceful solution with a sapient hostile force</i>, roll +head. On a 10+ they'll halt their attack...for now. On a 7-9, they'll need proof of your intentions before they'll stand down. On a miss, things turn out worse than if you hadn't tried to negotiate at all.</span>
         </div>
         <div class="moveset shepherd-moveset">
+            <br />
             <span class="move-title">Blessed</span><br /><span class="move1">You always tell your flock that if they believe, then it will be provided. When <i>making a roll affected by scarcity</i>, you take a +1 forward if you are at full Faith.<br /></span>
             <br />
             <span class="move-title">Maker's Will</span><br /><span class="move2">Your faith carries you through difficult times. Once per Crisis when you fail a roll you can use your Faith like an Intuition point. Your roll will become a success, but you will lose all your Faith until the next Crisis.</span>
@@ -399,16 +414,19 @@
             <span class="move-title">Unflinching</span><br /><span class="move4">Whenever you would <i>take a stress</i>, you can choose to take a harm instead.</span>
         </div>
         <div class="moveset ex-marine-moveset">
+            <br />
             <span class="move-title">Have Fun, That's an Order</span><br /><span class="move1">Once per fight, if you cause 5 or more harm in a single fight, mark off a stress. If you have no stress, add a temporary +1 ongoing to your +heart stat until you take a stress (max +heart +3).<br /></span>
             <br />
             <span class="move-title">The Nod</span><br /><span class="move2">Sometimes violence is necessary, but you're not sure when. Ask your "boss" (see your special) if they think a <i>difficult or dangerous situation</i> warrants extreme violence or not. If you do what they suggest, take a +1 on your next roll going forward. If you go against their suggestion, take a +1 to your next +hand roll, but your Cx with that person goes down by -1 until they forgive you.</span>
         </div>
         <div class="moveset miner-moveset">
+            <br />
             <span class="move-title"><i>Kowlting Gut, Bosmang</i></span><br /><span class="move1">You've got a sharp eye, and a nose for dangerous situations. When <i>someone else roles to survey the scene</i>, roll +hand to help them out. On a 10+ they get a +2 bonus to their roll. On a 7-9, they get a +1.<br /></span>
             <br />
             <span class="move-title">Birds of a Feather</span><br /><span class="move2">Miners stick up for miners, because no one else will. When you <i>encounter a hostile human force</i>, roll +group. On a 10+, someone in the hostile force is a former coworker, and they switch sides to assist you (you gain a permanent ally). On a mixed success, they don't know you personally but have heard of you (you gain a temporary ally). On a miss, you two have some bad blood and they want revenge.</span>
         </div>
         <div class="moveset security-moveset">
+            <br />
             <span class="move-title">Shame</span><br /><span class="move1">You gotta admit, sometimes there are moments when you get to be a real badass. Too bad you can never think of any good one-liners when it happens. When you <i>roll a 10+ hand roll</i>, add 1-harm to your damage while saying a witty/ corny/terribly punny one-liner, and take pride in making the rest of your team groan.<br /></span>
             <br />
             <span class="move-title">Patrol</span><br /><span class="move2">You spend a lot of your time patrolling, and it's given you a good idea of the best places to plan from in any given space. Take a +1 bonus to <i>Survey the Scene</i> when you're familiar with the current area.</span>
@@ -429,16 +447,19 @@
             <span class="move-title">Technobabble</span><br /><span class="move4">No one knows what you're saying, but they know it's smart. Once per Crisis you can throw together an item from any nearby scraps to help <i>get yourself out of a sticky situation</i>. It breaks afterwards.</span>
         </div>
         <div class="moveset biologist-moveset">
+            <br />
             <span class="move-title">Party Suit</span><br /><span class="move1">Sometimes contaminants happen. Good thing you're always prepared. When a <i>disease outbreak is spreading</i>, roll +head to see if you have your hazmat suit on hand. On a 10+ you avoid getting contaminated or sick thanks to your suit. On a 7-9, you have the important pieces (gasmask, gloves). On a miss, you don't <i>think</i> you're sick...<br /></span>
             <br />
             <span class="move-title">Wire in the Blood</span><br /><span class="move2">When you <i>suspect something is alien in nature</i>, roll +head to see if you can learn the truth about it. On a 10+ the Speaker will tell you something important about the alien. On 7-9 the alien learns something important about you, too. On a miss, you reveal a vital vulnerability to it and learn nothing.</span>
         </div>
         <div class="moveset chemist-moveset">
+            <br />
             <span class="move-title">Never Lick the Spoon</span><br /><span class="move1">You have a wide variety of chemicals at your disposal, and most of them are deadly. You regularly apply a coating of them to your weapons. Add the "poison" tag to any melee weapon in your possession.<br /></span>
             <br />
             <span class="move-title">Part of the Precipitate</span><br /><span class="move2">Sometimes things need blowing up. When you need to <i>create some explosives</i>, roll +head. On a 10+, you make the amount you need with no problems. On a 7-9, you can only make one. On a miss, it blows up in your face and things go badly for you.</span>
         </div>
         <div class="moveset medic-moveset">
+            <br />
             <span class="move-title">Deforrest Station</span><br /><span class="move1">After med school you did your residency at the best station hospital in the solar system. Whenever <i>you try to heal an unstable patient</i>, roll +head. On a 10+ you stabilize the patient and heal 4 harm. On a 7-9, you stabilize them and heal 1 harm. On a miss, you make it worse.<br /></span>
             <br />
             <span class="move-title">The Real McCoy</span><br /><span class="move2">Years of medical practice has prepared you for stress, but at what cost? At any point, you can erase an experience point to avoid becoming exhausted.</span>
@@ -459,16 +480,19 @@
 			<span class="move-title">Oooh Neat!</span><br /><span class="move4">It's rare that you learn something new, and really cool when you do. Mark an experience whenever you roll a natural 12 while <i>Surveying the Scene</i>.</span>
         </div>
         <div class="moveset academic-moveset">
+            <br />
             <span class="move-title">Research Beckons</span><br /><span class="move1">The prospect of a long night searching through your academic collection for the perfect answer sounds like your kind of fun. When you <i>take some time to do research</i>, take a +1 to your next roll to <i>Survey the Scene.</i><br /></span>
             <br />
             <span class="move-title">Punk-Ass Data Jockey</span><br /><span class="move2">Not everything you read is theory and rhetoric. Some of it's actually pretty useful in a fight. When you try to <i>Inflict Harm</i>, roll +head instead of +hand.</span>
         </div>
         <div class="moveset pilot-moveset">
+            <br />
             <span class="move-title">Nothin' But the Rain</span><br /><span class="move1">It's oddly satisfying to look out on a field of debris and know it's there because of you. Whenever you <i>destroy some hostile fighter forces in a dogfight</i>, remove a stress. If you have no stress, take +1 +heart until you gain your next stress (max heart+3).<br /></span>
             <br />
             <span class="move-title">Don't Tell Me the Odds</span><br /><span class="move2">Sometimes you gotta just take a chance, the math be damned. Whenever you try to <i>pull a risky maneuver in your fighter ship</i>, roll +tech. On a 10+ you pull it off like a pro. On a 7-9, there's some hitches. On a miss, it doesn't go as planned.</span>
         </div>
         <div class="moveset weapons-expert-moveset">
+            <br />
             <span class="move-title">Bianca</span><br /><span class="move1">If anyone ever asks, you love all your weapons equally. But you know the truth- there's one you love more than the rest. Pick one of your normal weapons and give it a name. This is now your favorite weapon. Take +1 to your +hand rolls whenever you use it during a fight.<br /></span>
             <br />
             <span class="move-title">My Other, Smaller Gun</span><br /><span class="move2">You know those cartoons when people have to disarm and they just keep pulling out weapons from increasingly unlikely places? That's you. Whenever <i>someone tries to disarm you</i>, roll +head. On a 10+, you managed to stash a weapon where they don't find it. On a 7-9, it's very small. On a miss, they don't find it but neither do you.</span>
@@ -489,16 +513,19 @@
             <span class="move-title">Rogue</span><br /><span class="move4">If you are <i>attacking someone or something from behind</i>, you can roll +head instead of +hand to Inflict Harm on the target.</span>
         </div>
         <div class="moveset criminal-moveset">
+            <br />
             <span class="move-title">Sticky Fingers</span><br /><span class="move1">There's a mark born every minute. When you try to <i>steal something</i>, roll +hand. On a 10+, it's yours. On a 7-9, you can get it but there will be a cost. On a miss, you're caught in the act.<br /></span>
             <br />
             <span class="move-title">Renegade Option</span><br /><span class="move2">When you <i>Influence Someone</i>, you can use +hand instead of +group to make your roll, as long as you do it in an intimidating manner.</span>
         </div>
         <div class="moveset kid-moveset">
+            <br />
             <span class="move-title">Escape Hatch</span><br /><span class="move1">You know all the vents and crawlspaces of this place like the back of your hand. When you <i>need to make a quick escape</i>, roll +head. On a 10+, you get out with no issues. On a 7-9, you'll leave something important behind. On a miss, you're caught in the attempt.<br /></span>
             <br />
             <span class="move-title">Get Away From Them!</span><br /><span class="move2">You don't want anyone to get hurt because of you. If someone is <i>trying to protect you from an enemy</i>, you get one free hit on the enemy that inflicts 1-harm.</span>
         </div>
         <div class="moveset survivor-moveset">
+            <br />
             <span class="move-title">Calculated Risk</span><br /><span class="move1">You've learned how to pick your battles, and it's helped you survive. Before you decide to <i>Inflict Harm</i> on someone or something, you can roll +head. On a 10+, the Speaker will tell you exactly what could go wrong. On a 7-9, they'll give you a vague idea. On a miss, you read things completely wrong.<br /></span>
             <br />
             <span class="move-title">Boy Am I Bad at Math</span><br /><span class="move2">When you <i>fail a roll while Acting Under Fire</i>, you can choose to immediately change the result into a mixed success and give the Speaker 2 hold over you to be used on any roll except <i>Act Under Fire</i>. The Speaker's holds can stack and can be held indefinitely.</span>
@@ -519,21 +546,25 @@
             <span class="move-title">I Could Have Done That</span><br /><span class="move4">You're competitive, and nothing drives you like wanting to be the best. If another spacer <i>gets a 10+ on a +tech roll in your presence</i>, you gain a +1 forward on your next +tech roll.</span>
         </div>
         <div class="moveset engineer-moveset">
+            <br />
             <span class="move-title">Givin' All She's Got, Captain</span><br /><span class="move1">You tell the captain that you're getting 100% out of things, but really it's probably more like 80%. Gotta hold something back for emergencies, right? Whenever you're trying to make an escape in a ship or vehicle, roll +tech. On a 10+ you coax enough out of the engine to escape unscathed. On a 7-9, it's a choppy ride. On a miss, something breaks that needs fixing immediately.<br /></span>
             <br />
             <span class="move-title">Bouncy Graviton Particle Beam</span><br /><span class="move2">You just make shit up, and somehow it works. You can choose to immediately succeed on a <i>Use/Repair an Advanced Item</i> roll, but the Speaker will change one of your future +tech rolls to a fail.</span>
         </div>
         <div class="moveset hacker-moveset">
+            <br />
             <span class="move-title">Knock Knock</span><br /><span class="move1">You're really good at getting into places that you shouldn't. Whenever you're <i>trying to hack into a secured system or place</i>, roll +head. On a 10+, you break in without triggering any alarms. On a 7-9, you can get in but it's only a matter of minutes before they'll notice you. On a miss, you're locked out and they know where you are now.<br /></span>
             <br />
             <span class="move-title">Bite Me</span><br /><span class="move2">Your system is impenetrable. Well, almost. But just in case anyone manages to get in, you've got a secret weapon. Whenever an <i>enemy tries to hack into your system</i>, roll +tech. On a 10+, your secret weapon succeeds at destroying their computers and stopping the attack. On a 7-9, you protect your secrets but it's going to cost you to do so. On a miss, they get exactly what they're looking for before destroying your stuff.</span>
         </div>
         <div class="moveset mechanic-moveset">
+            <br />
             <span class="move-title">Come On You <i>Bosh'tet</i></span><br /><span class="move1">You're a mechanical genius, even if no one else appreciates it as much as they should. Whenever there's a <i>mechanical failure of some kind</i>, roll +head. On a 10+, you suss out the problem quickly and know how to fix it. On a 7-9, its going to take you some time to stay and examine it first. On a miss, you definitely think you know how to fix it.<br /></span>
             <br />
             <span class="move-title">Mine's the Nicest</span><br /><span class="move2">You put a lot of effort and love into the ships and colonies you maintain, and you know them like the back of your hand. Roll +tech instead of +head when you <i>Survey the Scene</i> on your own ship or colony.</span>
         </div>
     </div>
+</div>
 </div>
 
 <script type="text/worker">

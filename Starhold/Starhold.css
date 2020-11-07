@@ -1,5 +1,9 @@
 /* Affects Entire Sheet */
 
+.sheet-whole-sheet {
+    height: 1800px;
+}
+
 .sheet-relative {
     position: relative;
 }
@@ -14,6 +18,10 @@ input, select, span, textarea, p {
 
 input, select, textarea {
     border: 1px solid;
+}
+
+.sheet-inlinerollresult, .textchatcontainer {
+    background-color: black;
 }
 
 /* Affects Left Column */
@@ -101,6 +109,56 @@ input, select, textarea {
     font-size: 20px;
     text-align: center;
     border: solid 1px;
+}
+
+button[type=roll] {
+    background: rgba(255,255,255,.3);
+    background-image: none;
+    border: none;
+    height: 22px;
+    width: 46px;
+}
+
+button[type=roll].sheet-head-roll::before,
+button[type=roll].sheet-hand-roll::before,
+button[type=roll].sheet-heart-roll::before,
+button[type=roll].sheet-group-roll::before,
+button[type=roll].sheet-tech-roll::before {
+    font-family: dicefontd6;
+    font-size: 30px;
+    content: 'Ll';
+}
+
+button[type=roll]:hover {
+    background: rgba(255,255,255,.6);
+}
+
+.sheet-head-roll, .sheet-heart-roll, .sheet-tech-roll {
+    top: 65px;
+}
+
+.sheet-hand-roll, .sheet-group-roll {
+    top: 52px;
+}
+
+.sheet-head-roll {
+    left: 27px;
+}
+
+.sheet-hand-roll {
+    left: 111px;
+}
+
+.sheet-heart-roll {
+    left: 196px;
+}
+
+.sheet-group-roll {
+    left: 281px;
+}
+
+.sheet-tech-roll {
+    left: 365px;
 }
 
 .sheet-head-text, .sheet-heart-text, .sheet-tech-text {
